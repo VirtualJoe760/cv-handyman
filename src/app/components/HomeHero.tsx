@@ -40,7 +40,7 @@ const HomeHero: React.FC = () => {
               Contact Us
             </a>
             <a
-              href="#"
+              href="/our-services"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
               Our Services <span aria-hidden="true">→</span>

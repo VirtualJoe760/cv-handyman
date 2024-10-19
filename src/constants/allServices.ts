@@ -1,10 +1,10 @@
-interface Service {
+export interface Service {
   id: string;
   service: string;
   price: string;
   description: string;
   body: string;
-  heading: string; // Added heading property
+  heading: string;
 }
 
 export const allServices: Service[] = [

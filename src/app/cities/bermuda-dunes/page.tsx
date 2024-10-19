@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ReactNode } from 'react';
+import React from 'react';
 import VariableHero from '@/components/VariableHero';
 import { coachellaValleyCities } from '@/constants/citiesArray'; // Import your updated cities array
 import { usePathname } from 'next/navigation';
@@ -8,7 +8,7 @@ import Reviews from '@/app/components/Reviews';
 import ServicesList from '@/app/components/ServicesList';
 
 // Define the City type to ensure proper type checking
-interface City {
+export interface City {
   name: string;
   population: number;
   id: string;
@@ -17,7 +17,7 @@ interface City {
   body: string;
 }
 
-const Cities: React.FC<{ children: ReactNode }> = ({ children }) => {
+const Cities: React.FC = () => {
   const pathname = usePathname(); // Get the current path
   const lastFolder = pathname.split('/').pop(); // Extract the last segment from the path
   
@@ -42,7 +42,7 @@ const Cities: React.FC<{ children: ReactNode }> = ({ children }) => {
         <h2 className="text-2xl ml-5">Population: {city.population}</h2>
         <p className="ml-5 py-10 text-3xl justify-start leading-loose">{city.body}</p>
       </section>
-      <ServicesList city={city.name} isCityPage={true} /> {/* Pass city name and isCityPage prop */}
+      <ServicesList isCityPage={true} /> {/* Pass city name and isCityPage prop */}
       <Reviews />
     </div>
   );

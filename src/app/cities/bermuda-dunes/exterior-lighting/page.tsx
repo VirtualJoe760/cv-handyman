@@ -5,12 +5,13 @@ import path from "path"; // Import path module
 import Contact from "@/app/components/Contact";
 
 // Define the type for the service object
-interface Service {
+export interface Service {
   id: string;
   service: string;
   price: string;
   description: string;
   body: string;
+  heading: string;
 }
 
 // Define the type for params

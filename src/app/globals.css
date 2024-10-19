@@ -13,6 +13,7 @@
 * {
   font-family: 'Afacad Flux', sans-serif !important;
   font-style: normal !important;
+  -webkit-font-smoothing: antialiased; /* Optional for better rendering on iOS */
 }
 
 :root {
@@ -29,6 +30,7 @@ body {
   background: var(--background);
   font-family: 'Afacad Flux', sans-serif;
   font-style: normal;
+  -webkit-font-smoothing: antialiased; /* Ensures better font rendering on WebKit */
 }
 
 /* Mobile-specific styles */
@@ -43,6 +45,19 @@ body {
     font-family: 'Afacad Flux', sans-serif !important;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  * {
+    font-family: 'Afacad Flux', sans-serif !important;
+    font-style: normal !important;
+  }
+
+  body {
+    font-style: normal !important;
+    font-family: 'Afacad Flux', sans-serif !important;
+  }
+}
+
 
 @layer utilities {
   .text-balance {

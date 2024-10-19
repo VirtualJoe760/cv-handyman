@@ -9,13 +9,15 @@
   font-style: normal;
 }
 
+/* Apply font-family and font-style to all elements */
 * {
-  font-style: normal;
+  font-family: 'Afacad Flux', sans-serif !important;
+  font-style: normal !important;
 }
 
 :root {
   --background: #ffffff;
-  --foreground: #000;
+  --foreground: #000000;
 }
 
 html {
@@ -27,6 +29,19 @@ body {
   background: var(--background);
   font-family: 'Afacad Flux', sans-serif;
   font-style: normal;
+}
+
+/* Mobile-specific styles */
+@media only screen and (max-width: 767px) {
+  * {
+    font-family: 'Afacad Flux', sans-serif !important;
+    font-style: normal !important;
+  }
+
+  body {
+    font-style: normal !important;
+    font-family: 'Afacad Flux', sans-serif !important;
+  }
 }
 
 @layer utilities {

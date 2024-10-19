@@ -14,16 +14,14 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
         <Image
           src={`/images/city-images/${city.id}.jpg`}
           alt={city.name}
-          layout="responsive" // Use responsive layout for automatic sizing
-          width={400} // Set the desired width
-          height={300} // Set the desired height
-          className="rounded-2xl object-cover"
+          layout="fill" // Use fill layout to make the image fill its parent
+          className="rounded-2xl object-cover" // This will maintain the aspect ratio and cover the area
         />
         <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
       </div>
       <div className="border-l-2 border-black h-40 mx-10" style={{ marginLeft: '2rem', marginRight: '2rem' }} /> {/* Added horizontal margin for spacing */}
       <div className="flex flex-col p-4"> {/* Add padding to the text section */}
-        <h3 className="text-6xl font-semibold leading-6 text-gray-900 mt-4">
+        <h3 className="text-6xl text-black mt-4">
           {city.name}
         </h3>
       </div>

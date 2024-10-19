@@ -22,7 +22,7 @@ const Cities: React.FC = () => {
         serviceName={city.name} // City name to be displayed in the hero
         description={city.description} // City description to be displayed in the hero
       />
-      <section className="mx-5 md:mx-32 xl:mx-64 xl:px-64 lg:mx-40 lg:px-40 my-10 py-10 px-2">
+      <section className="mx-5 2xl:px-80 lg:px-40 my-10 py-10 px-2">
         <h1 className="py-10 text-6xl">{city.heading}</h1>
         <h2 className="text-2xl ml-5">Population: {city.population}</h2>
         <p className="ml-5 py-10 text-4xl justify-start leading-loose">{city.body}</p> {/* Increased size of the paragraph */}

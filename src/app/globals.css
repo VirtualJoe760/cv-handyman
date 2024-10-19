@@ -2,48 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Font-face declaration with full font stack */
+/* Updated Font-Face Declaration for Afacad */
 @font-face {
-  font-family: 'Afacad Flux';
-  src: url('/fonts/AfacadFlux.woff2') format('woff2'),
-       url('/fonts/AfacadFlux.woff') format('woff'),
-       url('/fonts/AfacadFlux.ttf') format('truetype');
+  font-family: 'Afacad';
+  src: url('/fonts/Afacad.ttf') format('truetype'); /* Referencing the non-italic Afacad.ttf */
   font-weight: normal;
   font-style: normal;
 }
 
-/* Apply font to all elements with stronger specificity */
+/* Apply font globally with stronger specificity */
 * {
-  font-family: 'Afacad Flux', Arial, sans-serif !important; /* Include fallback fonts */
+  font-family: 'Afacad', Arial, sans-serif !important; /* Using the new Afacad font */
   font-style: normal !important; /* Force normal font-style */
-  -webkit-font-smoothing: antialiased; /* Improve text rendering on Webkit browsers */
-  -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
-  margin: 0; /* Reset margins */
+  -webkit-font-smoothing: antialiased; /* Smoothing for WebKit browsers */
+  -moz-osx-font-smoothing: grayscale; /* Smoothing for Firefox on macOS */
+  margin: 0; /* Reset margin */
   padding: 0; /* Reset padding */
   box-sizing: border-box; /* Standard box model */
 }
 
-/* Reset font styles on common elements */
+/* Reset on common elements to ensure no italics */
 h1, h2, h3, h4, h5, h6, p, div, span, a, button, input {
-  font-style: normal !important; /* Force font-style to normal */
-  font-family: 'Afacad Flux', Arial, sans-serif !important; /* Fallback to Arial if needed */
+  font-style: normal !important;
+  font-family: 'Afacad', Arial, sans-serif !important; /* Ensure it's using the new font */
 }
 
 /* Body default styles */
 body {
-  color: var(--foreground); /* Ensure text color is correct */
-  background: var(--background); /* Background color */
-  font-family: 'Afacad Flux', Arial, sans-serif !important; /* Apply font family */
-  font-style: normal !important; /* Force font-style to normal */
-  scroll-behavior: smooth; /* Smooth scrolling */
-  -webkit-font-smoothing: antialiased; /* Smoothing for iOS */
-  -moz-osx-font-smoothing: grayscale; /* Smoothing for macOS */
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Afacad', Arial, sans-serif !important;
+  font-style: normal !important;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Root color variables */
 :root {
   --background: #ffffff;
-  --foreground: #000; /* Changed to black for clarity */
+  --foreground: #000;
 }
 
 /* Tailwind utility extension */

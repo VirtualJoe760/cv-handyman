@@ -2,63 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font-face declaration with full font stack */
 @font-face {
   font-family: 'Afacad Flux';
-  src: url('/fonts/AfacadFlux.ttf') format('truetype');
+  src: url('/fonts/AfacadFlux.woff2') format('woff2'),
+       url('/fonts/AfacadFlux.woff') format('woff'),
+       url('/fonts/AfacadFlux.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-/* Apply font-family and font-style to all elements */
+/* Apply font to all elements with stronger specificity */
 * {
-  font-family: 'Afacad Flux', sans-serif !important;
-  font-style: normal !important;
-  -webkit-font-smoothing: antialiased; /* Optional for better rendering on iOS */
+  font-family: 'Afacad Flux', Arial, sans-serif !important; /* Include fallback fonts */
+  font-style: normal !important; /* Force normal font-style */
+  -webkit-font-smoothing: antialiased; /* Improve text rendering on Webkit browsers */
+  -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
+  margin: 0; /* Reset margins */
+  padding: 0; /* Reset padding */
+  box-sizing: border-box; /* Standard box model */
 }
 
+/* Reset font styles on common elements */
+h1, h2, h3, h4, h5, h6, p, div, span, a, button, input {
+  font-style: normal !important; /* Force font-style to normal */
+  font-family: 'Afacad Flux', Arial, sans-serif !important; /* Fallback to Arial if needed */
+}
+
+/* Body default styles */
+body {
+  color: var(--foreground); /* Ensure text color is correct */
+  background: var(--background); /* Background color */
+  font-family: 'Afacad Flux', Arial, sans-serif !important; /* Apply font family */
+  font-style: normal !important; /* Force font-style to normal */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  -webkit-font-smoothing: antialiased; /* Smoothing for iOS */
+  -moz-osx-font-smoothing: grayscale; /* Smoothing for macOS */
+}
+
+/* Root color variables */
 :root {
   --background: #ffffff;
-  --foreground: #000000;
+  --foreground: #000; /* Changed to black for clarity */
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: 'Afacad Flux', sans-serif;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased; /* Ensures better font rendering on WebKit */
-}
-
-/* Mobile-specific styles */
-@media only screen and (max-width: 767px) {
-  * {
-    font-family: 'Afacad Flux', sans-serif !important;
-    font-style: normal !important;
-  }
-
-  body {
-    font-style: normal !important;
-    font-family: 'Afacad Flux', sans-serif !important;
-  }
-}
-
-@supports (-webkit-touch-callout: none) {
-  * {
-    font-family: 'Afacad Flux', sans-serif !important;
-    font-style: normal !important;
-  }
-
-  body {
-    font-style: normal !important;
-    font-family: 'Afacad Flux', sans-serif !important;
-  }
-}
-
-
+/* Tailwind utility extension */
 @layer utilities {
   .text-balance {
     text-wrap: balance;

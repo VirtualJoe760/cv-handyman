@@ -9,9 +9,13 @@
   font-style: normal;
 }
 
+* {
+  font-style: normal;
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000;
 }
 
 html {
@@ -22,6 +26,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'Afacad Flux', sans-serif;
+  font-style: normal;
 }
 
 @layer utilities {

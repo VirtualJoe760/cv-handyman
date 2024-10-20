@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
         <div className="relative flex h-16 items-center justify-between">
           {/* Mobile menu button */}
           <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-black hover:bg-yellow-200 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-black hover:bg-red-400 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="sr-only">Open main menu</span>
               <Bars3Icon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
               <XMarkIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
                   className={classNames(
                     item.current
                       ? "border-b-2 border-blue-300 text-black"
-                      : "text-black border-b-2 border-transparent hover:border-b-2 hover:border-yellow-200 hover:text-black transition-all duration-300 ease-in-out",
+                      : "text-black border-b-2 border-transparent hover:border-b-2 hover:border-red-400 hover:text-black transition-all duration-300 ease-in-out",
                     "rounded-md px-3 py-2 text-sm font-medium"
                   )}
                 >
@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
               className={classNames(
                 item.current
                   ? "bg-gray-900 text-black"
-                  : "text-black hover:bg-yellow-200 hover:text-black",
+                  : "text-black hover:bg-red-400 hover:text-black",
                 "block rounded-md px-3 py-2 text-base font-medium"
               )}
             >

@@ -48,7 +48,7 @@ const ServicesList: React.FC<ServicesListProps> = ({ isCityPage }) => {
                     <span className="text-base font-semibold leading-7">
                       <span
                         onClick={() => handleContactClick(service)}
-                        className="cursor-pointer text-gray-900 hover:border-b-2 hover:border-yellow-200 transition duration-200"
+                        className="cursor-pointer text-black hover:border-b-2 hover:border-red-500 transition duration-200"
                       >
                         {service.service}
                       </span>

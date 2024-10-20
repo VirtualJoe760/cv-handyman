@@ -2,12 +2,12 @@ import React from 'react';
 
 const navigation = {
   main: [
-    { name: 'About', href: '/#about' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Accessibility', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: 'Home', href: '/' },
+    { name: 'Tips', href: '/tips' },
+    { name: 'Contact', href: '/#contact' },
+    { name: 'Jobs', href: 'https://docs.google.com/forms/d/e/1FAIpQLSfmgR9TRSFwKkSsZv-vWIJQswKiFLBRpnILx1s-N48henTHyg/viewform?usp=sf_link' },
+    { name: 'Our Services', href: '/our-services' },
+    { name: 'Service Area', href: '/cities' },
   ],
   social: [
     {
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
         <nav aria-label="Footer" className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12">
           {navigation.main.map((item) => (
             <div key={item.name} className="pb-6">
-              <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+              <a href={item.href} className="text-sm leading-6 text-black hover:text-blue-500">
                 {item.name}
               </a>
             </div>
@@ -54,14 +54,14 @@ const Footer: React.FC = () => {
         </nav>
         <div className="mt-10 flex justify-center space-x-10">
           {navigation.social.map((item) => (
-            <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
+            <a key={item.name} href={item.href} className="text-black hover:text-blue-500">
               <span className="sr-only">{item.name}</span>
               <item.icon aria-hidden="true" className="h-6 w-6" />
             </a>
           ))}
         </div>
-        <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-          &copy; 2020 Your Company, Inc. All rights reserved.
+        <p className="mt-10 text-center text-xs leading-5 text-black">
+          &copy; Coachella Valley Handyman, Hughes Home Services,  All rights reserved.
         </p>
       </div>
     </footer>

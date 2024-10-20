@@ -13,24 +13,24 @@ const HomeHero: React.FC = () => {
             width={72}
             height={72}
           />
-          <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+          <h1 className="mt-10 text-4xl font-bold tracking-tight text-black sm:text-6xl">
             Coachella Valley&apos;s Best Handymen Stand By Ready To Help.
           </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-lg leading-8 text-black">
             Our dedicated team of skilled professionals is ready to tackle any
             project, big or small. We're here to make your home improvements
             easy and stress-free.
           </p>
           <div className="mt-10 flex items-center gap-x-6">
             <a
-              href="/contact"
-              className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              href="/#contact"
+              className="rounded-md scroll-smoooth bg-indigo-500 px-3.5 py-2.5 text-sm text-white shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Contact Us
             </a>
             <a
               href="/our-services"
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-sm text-black hover:text-red-600"
             >
               Our Services <span aria-hidden="true">→</span>
             </a>

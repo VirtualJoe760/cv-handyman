@@ -12,7 +12,7 @@ const ContactFormSubmission: React.FC<ContactFormSubmissionProps> = ({ agreed, s
   return (
     <>
       {/* Privacy Policy Switch */}
-      <Field className="flex gap-x-4 sm:col-span-2">
+      <Field className="flex gap-x-4 sm:col-span-2 pt-2">
         <div className="flex h-6 items-center">
           <Switch
             checked={agreed}

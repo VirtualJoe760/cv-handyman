@@ -8,7 +8,7 @@ interface CustomerServiceProps {
 
 const CustomerService: React.FC<CustomerServiceProps> = ({ formData, handleChange }) => {
   return (
-    <div className="sm:col-span-2">
+    <div className="sm:col-span-2 pt-5">
       <label htmlFor="services" className="block text-sm font-semibold leading-6 text-gray-900">Select Service (Optional)</label>
       <div className="mt-2.5">
         <select

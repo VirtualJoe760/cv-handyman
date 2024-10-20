@@ -15,7 +15,7 @@ interface Service {
 
 interface ServicesListProps {
   isCityPage: boolean;
-  cityId: string; // Add cityId as a required prop
+  cityId?: string; // Add cityId as a required prop
 }
 
 const ServicesList: React.FC<ServicesListProps> = ({ isCityPage, cityId }) => {

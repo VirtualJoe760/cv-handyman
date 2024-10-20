@@ -14,7 +14,7 @@ const navigation: NavItem[] = [
   { name: "Home", href: "/", current: false },
   { name: "Tips", href: "/tips", current: false },
   { name: "Our Services", href: "/our-services", current: false },
-  { name: "Cities", href: "/cities", current: false },
+  { name: "Service Area", href: "/cities", current: false },
   { name: "Contact", href: "/#contact", current: false },
 ];
 

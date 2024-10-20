@@ -1,5 +1,6 @@
 [build]
-  publish = "out"  # Adjust this to match your build output folder (for example, "out" for Next.js or "public" for static sites)
+  command = "npm run build"
+  publish = ".next"  # Adjust this to match your build output folder (for example, "out" for Next.js or "public" for static sites)
 
 [[redirects]]
   from = "/#invite_token=:invite_token"

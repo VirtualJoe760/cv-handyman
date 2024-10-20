@@ -1,0 +1,77 @@
+/* Load the custom font */
+@font-face {
+  font-family: 'Afacada';
+  src: url('/fonts/afacada.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply the dark theme background */
+body, .nc-app-wrapper {
+  background-color: #1e1e1e;  /* Dark background */
+  color: #ffffff;  /* Light text for contrast */
+  font-family: 'Afacada', sans-serif; /* Use your custom font */
+}
+
+/* Adjust form fields and buttons for dark theme */
+.nc-controlPane-widget, .nc-widgetControl input, .nc-widgetControl textarea {
+  background-color: #2c2c2c;  /* Darker background for form fields */
+  color: #ffffff;  /* White text inside form fields */
+  border: 1px solid #444444;  /* Subtle border */
+}
+
+/* Improve the contrast for form field placeholders */
+.nc-widgetControl input::placeholder,
+.nc-widgetControl textarea::placeholder {
+  color: #bbbbbb;  /* Lighter placeholder text */
+}
+
+/* Button styling for dark theme */
+.nc-controlPane-actions button {
+  background-color: #4CAF50;  /* Custom green button */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 0;
+  margin: 10px 0;
+  width: 100%;
+  cursor: pointer;
+  font-family: 'Afacada', sans-serif;  /* Apply custom font to buttons */
+}
+
+.nc-controlPane-actions button:hover {
+  background-color: #45a049;  /* Darker green on hover */
+}
+
+/* Improve the layout and text size for mobile */
+@media (max-width: 768px) {
+  /* Adjust the width of the main container */
+  .nc-app-wrapper {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  /* Mobile font sizing and button layout */
+  .nc-controlPane-control {
+    font-size: 14px;
+  }
+
+  .nc-controlPane-widget {
+    margin-bottom: 15px;
+  }
+
+  /* Optimize layout for form inputs */
+  .nc-widgetControl input,
+  .nc-widgetControl textarea {
+    width: 100%;
+    font-size: 16px;
+    background-color: #333333;  /* Darker background for mobile inputs */
+  }
+
+  /* Ensure buttons are easier to click on mobile */
+  .nc-controlPane-actions button {
+    width: 100%;
+    padding: 12px 0;
+    margin: 10px 0;
+  }
+}

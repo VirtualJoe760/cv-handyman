@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitation to Register</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333;">
+ <!-- Invitation Email Template -->
+<div style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; color: #333;">
+    <div style="width: 100%; max-width: 600px; margin: 0 auto; padding: 20px; background-color: white; border-radius: 5px;">
+      <h2 style="color: #4CAF50;">You're Invited!</h2>
+      <p>Hello,</p>
+      <p>You’ve been invited to register for an account with Administrator Privilages @ <strong>Coachella Valley Handyman</strong>. Please click the link below to complete your registration:</p>
+      <p>
+        <a href="{{ .SiteURL }}/admin/#invite_token={{ .Token }}" 
+           style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px;">
+          Complete Your Registration
+        </a>
+      </p>
+      <p>If you did not request this invitation, please ignore this email.</p>
+      <p>Best regards,<br>Coachella Valley Handyman</p>
+    </div>
+  </div>
+</body>
+</html>

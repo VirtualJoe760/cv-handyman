@@ -7,23 +7,24 @@ import { coachellaValleyCities } from '@/constants/citiesArray'; // Import the c
 import { usePathname } from 'next/navigation';
 
 interface Service {
-  id: string; // Ensure id is part of the Service interface
+  id: string;
   service: string;
   description: string;
   price: string;
 }
 
 interface ServicesListProps {
-  isCityPage: boolean; // Adjusted to not expect a city prop
+  isCityPage: boolean;
+  cityId: string; // Add cityId as a required prop
 }
 
-const ServicesList: React.FC<ServicesListProps> = ({ isCityPage }) => {
-  const router = useRouter(); // This now uses next/navigation
-  const pathname = usePathname(); // Get the current path
-  const lastFolder = pathname.split('/').pop(); // Extract the last segment from the path
+const ServicesList: React.FC<ServicesListProps> = ({ isCityPage, cityId }) => {
+  const router = useRouter();
+  const pathname = usePathname(); 
+  const lastFolder = pathname.split('/').pop(); 
 
-  // Find the corresponding city object based on the last folder
-  const city = coachellaValleyCities.find((c) => c.id === lastFolder);
+  // Find the corresponding city object based on the cityId passed as a prop
+  const city = coachellaValleyCities.find((c) => c.id === cityId);
 
   const handleContactClick = (service: Service) => {
     if (isCityPage && city) {

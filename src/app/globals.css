@@ -50,3 +50,50 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Markdown Styles */
+.post-content {
+  @apply leading-relaxed;
+  font-size: 1.25rem; /* Increase the base font size */
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  max-width: 700px;
+}
+
+/* Style headings */
+.post-content h1, .post-content h2, .post-content h3 {
+  font-weight: bold; /* Bold headings */
+  margin-top: 2rem; /* Add space above headings */
+  margin-bottom: 1rem; /* Add space below headings */
+}
+
+.post-content h1 {
+  font-size: 2.5rem; /* Adjust heading size */
+}
+
+.post-content h2 {
+  font-size: 2rem; /* Adjust heading size */
+}
+
+.post-content h3 {
+  font-size: 1.75rem; /* Adjust heading size */
+}
+
+/* Style paragraphs */
+.post-content p {
+  margin-bottom: 1.5rem; /* Add space between paragraphs */
+}
+
+/* Style lists */
+.post-content ul, .post-content ol {
+  margin-left: 2rem; /* Add left margin for lists */
+  margin-bottom: 1.5rem; /* Add space between list and other elements */
+}
+
+/* Style blockquotes */
+.post-content blockquote {
+  padding-left: 1.5rem;
+  border-left: 4px solid #ccc;
+  font-style: italic;
+  margin: 1.5rem 0;
+}

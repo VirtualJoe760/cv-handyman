@@ -16,19 +16,22 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": "./src",
+    "baseUrl": ".",  // Change baseUrl to root
     "paths": {
       "@/*": [
-        "*"
+        "src/*"
       ],
       "@/components/*": [
-        "./app/components/*"
+        "./src/app/components/*"
       ],
       "@/constants/*": [
-        "./constants/*"
+        "./src/constants/*"
       ],
       "@/utils/*": [
-        "./utils/*"
+        "./src/utils/*"
+      ],
+      "@/types/*": [
+        "./src/types/*"    // Updated path to point to the root-level types folder
       ]
     },
     "incremental": true,
@@ -44,7 +47,7 @@
     "**/*.tsx",
     "next.config.mjs",
     ".next/types/**/*.ts"
-  ],
+, "src/utils/bulkCloudinaryUpload.js"  ],
   "exclude": [
     "node_modules"
   ]

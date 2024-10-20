@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const categories = [
@@ -6,11 +7,9 @@ const categories = [
     id: 1,
     title: "How to Articles",
     href: "tips/how-to",
-    description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
     imageUrl:
       "https://images.unsplash.com/photo-1595814432314-90095f342694?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
+    altText: "A person paiting a home - How to Articles",
     author: {
       name: "Coachella Valley Handyman",
     },
@@ -19,22 +18,20 @@ const categories = [
     id: 2,
     title: "Home Improvement",
     href: "/tips/home-improvement",
-    description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
     imageUrl:
       "https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Home renovation project in progress - Home Improvement",
     author: {
-      name: "Coachella Valley Handyman"
-},
+      name: "Coachella Valley Handyman",
+    },
   },
   {
     id: 3,
     title: "Seasonal Home Care",
     href: "/tips/seasonal-home-care",
-    description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
     imageUrl:
       "https://images.unsplash.com/photo-1561065091-4908548ee638?q=80&w=2448&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Keep cool in the desert with seasonal maintenance - Seasonal Home Care",
     author: {
       name: "Coachella Valley Handyman",
     },
@@ -46,11 +43,11 @@ const TipsCategories = () => {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Choose your category
+          <h2 className="text-3xl font-bold tracking-tight pb-3 text-black sm:text-4xl">
+            Explore Our Expert Tips
           </h2>
-          <p className="mt-2 text-lg leading-8 text-gray-600">
-            We have a range of tips for our customers and love to help you.
+          <p className="mt-2 text-lg leading-8 text-black">
+            Browse through our collection of handy tips tailored for homeowners. Whether you're tackling a DIY project or looking for expert advice on home improvement, we've got you covered with insights to help you every step of the way.
           </p>
         </div>
         <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -62,7 +59,7 @@ const TipsCategories = () => {
               <Image
                 width={378}
                 height={412}
-                alt=""
+                alt={category.altText} // Dynamic alt text
                 src={category.imageUrl}
                 className="absolute inset-0 -z-10 h-full w-full object-cover"
               />
@@ -76,11 +73,11 @@ const TipsCategories = () => {
                   </div>
                 </div>
               </div>
-              <h3 className="mt-3 text-2xl text-white">
-                <a href={category.href}>
+              <h3 className="mt-3 text-3xl text-white">
+                <Link href={category.href}>
                   <span className="absolute inset-0" />
                   {category.title}
-                </a>
+                </Link>
               </h3>
             </article>
           ))}

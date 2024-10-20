@@ -121,3 +121,4 @@ export const coachellaValleyCities: City[] = [
     body: "At Coachella Valley Handyman, we offer expert handyman services to the residents of Thermal. Our dedicated team is here to ensure your home remains a comfortable and functional space, providing quality maintenance and repair solutions tailored to the unique needs of this community."
   }
 ];
+

@@ -2,7 +2,7 @@
 title: 5 Basic Home Maintenance Tips
 slugId: basic-home-maintenance-tips
 date: 10/22/2024
-section: '"how-to"'
+section: how-to
 image: https://res.cloudinary.com/dcrue4vr6/image/upload/t_blog-post/v1729544239/AdobeStock_221207163.jpg
 metaTitle: 5 Basic Home Maintenance Tips | Coachella Valley Handyman
 metaDescription: Discover essential home maintenance tips to keep your home in

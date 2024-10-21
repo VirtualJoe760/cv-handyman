@@ -9,7 +9,7 @@ media_library:
     api_key: "411427416161613"  # Your Cloudinary API key
     api_secret: "IJHHE-g01BgD_TYU-RuwuUip_ug"  # Your Cloudinary API secret
 
-media_folder: "public/images/uploads"  # Local path in your repository where images are uploaded (Cloudinary will store these remotely)
+media_folder: "public/images/uploads"  # Local path in your repository (not used for string input)
 public_folder: "/images/uploads"  # The public URL path for accessing media on your site
 
 collections:
@@ -19,14 +19,14 @@ collections:
     create: true
     slug: "{{slugId}}"
     fields:
-      - { label: "Title", name: "title", widget: "string", required: true, hint: "This is the title of the blog post. It will also be used as the main heading on the post page." }
-      - { label: "Slug ID", name: "slugId", widget: "string", required: true, hint: "SEO-friendly URL for the post (e.g., 'keep-home-cool-in-summer'). Keep it short and keyword-rich." }
-      - { label: "Date", name: "date", widget: "datetime", required: true, hint: "Date of publication. Important for displaying the timeline of posts." }
-      - { label: "Body", name: "body", widget: "markdown", required: true, hint: "Main content of the post. You can use Markdown to format the text." }
-      - { label: "Image", name: "image", widget: "image", required: true, hint: "Upload a featured image for this post. It will appear on social media shares and as the header image." }
+      - { label: "Title", name: "title", widget: "string", required: true, hint: "This is the title of the blog post." }
+      - { label: "Slug ID", name: "slugId", widget: "string", required: true, hint: "SEO-friendly URL for the post." }
+      - { label: "Date", name: "date", widget: "datetime", required: true, hint: "Date of publication." }
+      - { label: "Body", name: "body", widget: "markdown", required: true, hint: "Main content of the post." }
+      - { label: "Image URL", name: "imageUrl", widget: "string", required: true, hint: "Enter the URL of the featured image for this post." }
       - { label: "Section", name: "section", widget: "select", options: ["How To", "Home Improvement", "Seasonal Home Care"], required: true, hint: "Select the section of the blog this post belongs to." }
-      - { label: "Meta Title", name: "metaTitle", widget: "string", required: true, hint: "This is the title that will appear in search engine results. Keep it short, descriptive, and keyword-rich." }
-      - { label: "Meta Description", name: "metaDescription", widget: "text", required: true, hint: "A brief description of the post. This appears under the title in search results." }
-      - { label: "OG Image", name: "ogImage", widget: "image", required: true, hint: "The Open Graph image for social media sharing (usually 1200x630 pixels)." }
-      - { label: "Image Alt Text", name: "altText", widget: "string", required: true, hint: "Describe the image for accessibility and SEO. This will help search engines understand the image content." }
-      - { label: "Keywords", name: "keywords", widget: "list", field: { label: "Keyword", name: "keyword", widget: "string" }, required: true, hint: "List the main keywords for this post. These help search engines index your content correctly." }
+      - { label: "Meta Title", name: "metaTitle", widget: "string", required: true, hint: "Title for search engine results." }
+      - { label: "Meta Description", name: "metaDescription", widget: "text", required: true, hint: "A brief description of the post." }
+      - { label: "OG Image URL", name: "ogImageUrl", widget: "string", required: true, hint: "Enter the Open Graph image URL for social media sharing." }
+      - { label: "Image Alt Text", name: "altText", widget: "string", required: true, hint: "Describe the image for accessibility." }
+      - { label: "Keywords", name: "keywords", widget: "list", field: { label: "Keyword", name: "keyword", widget: "string" }, required: true, hint: "List the main keywords for this post." }

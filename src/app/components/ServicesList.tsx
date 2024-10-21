@@ -15,7 +15,7 @@ interface Service {
 
 interface ServicesListProps {
   isCityPage: boolean;
-  cityId?: string; // Add cityId as a required prop
+  cityId?: string; // Make cityId optional since it's not needed when isCityPage is false
 }
 
 const ServicesList: React.FC<ServicesListProps> = ({ isCityPage, cityId }) => {
@@ -23,8 +23,8 @@ const ServicesList: React.FC<ServicesListProps> = ({ isCityPage, cityId }) => {
   const pathname = usePathname(); 
   const lastFolder = pathname.split('/').pop(); 
 
-  // Find the corresponding city object based on the cityId passed as a prop
-  const city = coachellaValleyCities.find((c) => c.id === cityId);
+  // Find the corresponding city object based on the cityId or last folder when isCityPage is true
+  const city = isCityPage ? coachellaValleyCities.find((c) => c.id === cityId) : null;
 
   const handleContactClick = (service: Service) => {
     if (isCityPage && city) {

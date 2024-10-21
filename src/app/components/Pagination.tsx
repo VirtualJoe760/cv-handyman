@@ -7,24 +7,34 @@ interface PaginationProps {
 }
 
 export const Pagination = ({ currentPage, totalPages, section }: PaginationProps) => {
+  // Determine previous and next page numbers
   const prevPage = currentPage > 1 ? currentPage - 1 : null;
   const nextPage = currentPage < totalPages ? currentPage + 1 : null;
 
   return (
     <div className="flex justify-center items-center space-x-4 mt-8">
+      {/* Previous Page Link */}
       {prevPage && (
-        <Link href={`/tips/${section}?page=${prevPage}`}>
-          <a className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Previous</a>
+        <Link 
+          href={`/tips/${section}${prevPage > 1 ? `?page=${prevPage}` : ''}`} 
+          className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+        >
+          Previous
         </Link>
       )}
 
+      {/* Current Page Indicator */}
       <span className="text-sm">
         Page {currentPage} of {totalPages}
       </span>
 
+      {/* Next Page Link */}
       {nextPage && (
-        <Link href={`/tips/${section}?page=${nextPage}`}>
-          <a className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Next</a>
+        <Link 
+          href={`/tips/${section}${nextPage > 1 ? `?page=${nextPage}` : ''}`} 
+          className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+        >
+          Next
         </Link>
       )}
     </div>

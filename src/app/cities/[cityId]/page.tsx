@@ -35,7 +35,7 @@ const CityPage: React.FC<{ params: Params }> = ({ params }) => {
     );
   }
 
-  const backgroundImagePath = `/images/city-images/${city.id}.jpg`;
+  const backgroundImagePath = `https://res.cloudinary.com/dcrue4vr6/image/upload/v1729459742/${city.id}.jpg`;
 
   return (
     <>

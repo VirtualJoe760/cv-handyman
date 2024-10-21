@@ -12,7 +12,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
     <Link href={`/cities/${city.id}`} className="relative flex items-center cursor-pointer">
       <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:w-80 lg:h-52"> {/* Make image bigger on large screens */}
         <Image
-          src={`/images/city-images/${city.id}.jpg`}
+          src={`https://res.cloudinary.com/dcrue4vr6/image/upload/v1729459742/${city.id}.jpg`}
           alt={city.name}
           layout="fill" // Use fill layout to make the image fill its parent
           className="rounded-2xl object-cover" // This will maintain the aspect ratio and cover the area

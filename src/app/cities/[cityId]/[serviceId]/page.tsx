@@ -37,7 +37,7 @@ const Page: React.FC<{ params: Params }> = ({ params }) => {
   }
 
   // Set the background image path based on the serviceId
-  const backgroundImagePath = `/images/service-images/${serviceId}.jpg`;
+  const backgroundImagePath = `https://res.cloudinary.com/dcrue4vr6/image/upload/v1729459742/${serviceId}.jpg`;
 
   return (
     <>

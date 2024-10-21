@@ -6,7 +6,7 @@ import { coachellaValleyCities } from '@/constants/citiesArray'; // Import your 
 import CityCard from '../components/CityCard'; // Import the CityCard component
 
 const Cities: React.FC = () => {
-  const backgroundImagePath = `/images/city-images/coachella-valley.jpg`; // Static path to the valley's background image
+  const backgroundImagePath = `https://res.cloudinary.com/dcrue4vr6/image/upload/v1729459742/coachella-valley.jpg`; // Static path to the valley's background image
 
   // Find the corresponding city object for Coachella Valley
   const city = coachellaValleyCities.find((c) => c.id === "coachella-valley");

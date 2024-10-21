@@ -1,20 +1,20 @@
 ---
-title: Landscaping Ideas to Enhance Your Curb Appeal in the Coachella Valley
-slugId: '"landscaping-ideas-curb-appeal"'
-date: '"10/21/2024"'
-section: '"home-improvement"'
-image: '"https://res.cloudinary.com/dcrue4vr6/image/upload/t_blog-post/v1729542171/AdobeStock_900115285.jpg"'
-metaTitle: '"Landscaping Ideas to Enhance Your Curb Appeal | Coachella Valley Handyman"'
-metaDescription: Explore landscaping ideas to enhance your curb appeal in the
-  Coachella Valley, including native plants, outdoor living spaces, and more.
-ogImage: '"https://res.cloudinary.com/dcrue4vr6/image/upload/t_blog-post/v1729542171/AdobeStock_900115285.jpg"'
-altText: Beautiful desert landscaping with native plants and outdoor features.
+title: "Landscaping Ideas to Enhance Your Curb Appeal in the Coachella Valley"
+slugId: "landscaping-ideas-curb-appeal"
+date: "10/21/2024"
+section: "home-improvement"
+image: "https://res.cloudinary.com/dcrue4vr6/image/upload/t_blog-post/v1729542171/AdobeStock_900115285.jpg"
+metaTitle: "Landscaping Ideas to Enhance Your Curb Appeal | Coachella Valley Handyman"
+metaDescription: "Explore landscaping ideas to enhance your curb appeal in the Coachella Valley, including native plants, outdoor living spaces, and more."
+ogImage: "https://res.cloudinary.com/dcrue4vr6/image/upload/t_blog-post/v1729542171/AdobeStock_900115285.jpg"
+altText: "Beautiful desert landscaping with native plants and outdoor features."
 keywords:
   - landscaping
   - curb appeal
   - coachella valley
   - desert plants
 ---
+
 # Landscaping Ideas to Enhance Your Curb Appeal in the Coachella Valley
 
 Living in the Coachella Valley means embracing the beauty of the desert landscape while also having the opportunity to create a lush, inviting outdoor space. Whether you prefer the low-maintenance charm of desert plants or the vibrant feel of a grassy lawn, there are plenty of landscaping ideas to enhance your curb appeal. Here are some tips tailored to our unique environment.

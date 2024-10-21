@@ -20,7 +20,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         {/* Open Graph meta tags for social media sharing */}
         <meta property="og:title" content="Coachella Valley Handyman: Your Trusted Partner for Home Improvement" />
         <meta property="og:description" content="Coachella Valley Handyman offers professional handyman services for all your home improvement needs. From seasonal maintenance and repairs to custom installations, our skilled team ensures your home remains safe, functional, and beautiful." />
-        <meta property="og:image" content="https://res.cloudinary.com/dcrue4vr6/image/upload/v1729463634/coachella-valley.jpg" />
+        <meta property="og:image" content="https://res.cloudinary.com/dcrue4vr6/image/upload/w_1200,h_630,q_auto,f_auto/v1729463634/coachella-valley.jpg" />
         <meta property="og:url" content="https://coachellavalleyhandyman.com" />
       </Head>
       <body>

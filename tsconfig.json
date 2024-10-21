@@ -16,7 +16,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",  // Change baseUrl to root
+    "baseUrl": ".",  // Keep this to root
     "paths": {
       "@/*": [
         "src/*"
@@ -31,7 +31,11 @@
         "./src/utils/*"
       ],
       "@/types/*": [
-        "./src/types/*"    // Updated path to point to the root-level types folder
+        "./src/types/*",
+      ],
+      // Add the root alias below
+      "@root/*": [
+        "./../typescript*"
       ]
     },
     "incremental": true,
@@ -46,8 +50,9 @@
     "**/*.ts",
     "**/*.tsx",
     "next.config.mjs",
-    ".next/types/**/*.ts"
-, "src/utils/bulkCloudinaryUpload.js"  ],
+    ".next/types/**/*.ts",
+    "src/utils/bulkCloudinaryUpload.js"
+  ],
   "exclude": [
     "node_modules"
   ]

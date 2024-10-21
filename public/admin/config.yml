@@ -20,13 +20,13 @@ collections:
     slug: "{{slugId}}"
     fields:
       - { label: "Title", name: "title", widget: "string", required: true, hint: "This is the title of the blog post." }
-      - { label: "Slug ID", name: "slugId", widget: "string", required: true, hint: "SEO-friendly URL for the post." }
-      - { label: "Date", name: "date", widget: "datetime", required: true, hint: "Date of publication." }
+      - { label: "Slug ID", name: "slugId", widget: "string", required: true, hint: "SEO-friendly URL for the post. Use quotes around the slug." }
+      - { label: "Date", name: "date", widget: "string", required: true, hint: "Date of publication. Specific format is MM/DD/YEAR. It needs to be in this 2/2/4 format. Use quotes to define the date as a string." }
+      - { label: "Section", name: "section", widget: "select", options: ["\"how-to\"", "\"home-improvement\"", "\"seasonal-home-care\""], required: true, hint: "Select the section of the blog this post belongs to. Use quotes." }
       - { label: "Body", name: "body", widget: "markdown", required: true, hint: "Main content of the post." }
-      - { label: "Image URL", name: "imageUrl", widget: "string", required: true, hint: "Enter the URL of the featured image for this post." }
-      - { label: "Section", name: "section", widget: "select", options: ["How To", "Home Improvement", "Seasonal Home Care"], required: true, hint: "Select the section of the blog this post belongs to." }
-      - { label: "Meta Title", name: "metaTitle", widget: "string", required: true, hint: "Title for search engine results." }
+      - { label: "Image", name: "image", widget: "string", required: true, hint: "Enter the URL of the featured image for this post. Use quotes." }
+      - { label: "Meta Title", name: "metaTitle", widget: "string", required: true, hint: "Title for search engine results. Use quotes." }
       - { label: "Meta Description", name: "metaDescription", widget: "text", required: true, hint: "A brief description of the post." }
-      - { label: "OG Image URL", name: "ogImageUrl", widget: "string", required: true, hint: "Enter the Open Graph image URL for social media sharing." }
+      - { label: "OG Image", name: "ogImage", widget: "string", required: true, hint: "Enter the Open Graph image URL for social media sharing. Use quotes." }
       - { label: "Image Alt Text", name: "altText", widget: "string", required: true, hint: "Describe the image for accessibility." }
       - { label: "Keywords", name: "keywords", widget: "list", field: { label: "Keyword", name: "keyword", widget: "string" }, required: true, hint: "List the main keywords for this post." }

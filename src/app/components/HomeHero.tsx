@@ -40,7 +40,7 @@ const HomeHero: React.FC = () => {
         {/* Update the src with Cloudinary URL */}
         <Image
           alt="handyman-hero-image"
-          src="https://res.cloudinary.com/dcrue4vr6/image/upload/v1729463634/handyman-home-hero.png"
+          src="https://res.cloudinary.com/dcrue4vr6/image/upload/w_850,h_350,q_auto/v1729463634/handyman-home-hero.png"
           width={850}
           height={350}
         />

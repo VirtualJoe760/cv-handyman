@@ -36,8 +36,8 @@ export default async function SectionPage({
                     alt={post.altText}
                     src={post.image}
                     className="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"
-                    width={850}
-                    height={400}
+                    width={1200}
+                    height={630}
                   />
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </div>

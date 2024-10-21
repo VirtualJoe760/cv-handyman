@@ -1,19 +1,12 @@
-import "./globals.css"; // Tailwind and global styles
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import { ReactNode } from "react";
+// components/CustomHead.tsx
+"use client";
+
+import React from "react";
 import Head from "next/head";
 
-
-
-interface RootLayoutProps {
-  children: ReactNode;
-}
-
-export default function RootLayout({ children }: RootLayoutProps) {
+const CustomHead: React.FC = () => {
   return (
-    <html lang="en">
-      <Head>
+    <Head>
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       <title>
@@ -41,11 +34,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       />
       <meta property="og:url" content="https://coachellavalleyhandyman.com" />
     </Head>
-      <body>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
   );
-}
+};
+
+export default CustomHead;

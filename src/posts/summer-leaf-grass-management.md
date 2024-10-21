@@ -2,7 +2,7 @@
 title: "Summer Leaf and Grass Management: Keep Your Property Pristine"
 slugId: summer-leaf-grass-management
 date: 10/21/2024
-section: '"seasonal-home-care"'
+section: 'seasonal-home-care'
 image: https://res.cloudinary.com/dcrue4vr6/image/upload/t_blog-post/v1729543272/AdobeStock_223051650.jpg
 metaTitle: Summer Leaf and Grass Management | Coachella Valley Handyman
 metaDescription: Learn how to manage dry leaves and dead grass during summer in

@@ -3,6 +3,7 @@ import VariableHero from '@/components/VariableHero';
 import { coachellaValleyCities } from '@/constants/citiesArray';
 import ServicesList from '@/app/components/ServicesList';
 import Reviews from '@/app/components/Reviews';
+import { cityPageContent } from '@/constants/staticContent'; // Import the static content
 
 // Define the types for city
 export interface City {
@@ -27,9 +28,9 @@ const CityPage: React.FC<{ params: Params }> = ({ params }) => {
   if (!city) {
     return (
       <div>
-        <p>City not found</p>
+        <p>{cityPageContent.cityNotFound.message}</p> {/* Fallback content */}
         <a href="/cities" className="text-blue-500 hover:underline">
-          Go back to cities
+          {cityPageContent.cityNotFound.backToCities}
         </a>
       </div>
     );
@@ -45,10 +46,11 @@ const CityPage: React.FC<{ params: Params }> = ({ params }) => {
         description={city.description}
       />
 
+      {/* City information section */}
       <section className="mx-5 2xl:px-80 lg:px-40 my-10 py-10 px-2">
         <h1 className="py-10 text-6xl">{city.heading}</h1>
         <h2 className="text-2xl ml-5">Population: {city.population}</h2>
-        <p className="ml-5 py-10 text-3xl justify-start leading-loose">{city.body}</p>
+        <p className="ml-5 py-10 text-2xl justify-start leading-loose">{city.body}</p>
       </section>
 
       {/* Display the list of services */}

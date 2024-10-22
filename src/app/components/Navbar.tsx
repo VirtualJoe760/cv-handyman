@@ -1,22 +1,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-
-// Define the type for navigation items
-interface NavItem {
-  name: string;
-  href: string;
-  current: boolean;
-}
-
-// Update the navigation links as per your requirement
-const navigation: NavItem[] = [
-  { name: "Home", href: "/", current: false },
-  { name: "Tips", href: "/tips", current: false },
-  { name: "Our Services", href: "/our-services", current: false },
-  { name: "Service Area", href: "/cities", current: false },
-  { name: "Contact", href: "/#contact", current: false },
-];
+import { navigation, staticNav } from "@/utils/navigation"; // Import navigation and static content
 
 function classNames(...classes: (string | false | null | undefined)[]): string {
   return classes.filter(Boolean).join(" ");
@@ -36,12 +21,14 @@ const Navbar: React.FC = () => {
             </DisclosureButton>
           </div>
 
-          {/* Left side of the navbar: logo */}
+          {/* Left side of the navbar: logo and title */}
           <div className="flex flex-1 items-center justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <Image src="/palm-tree-svgrepo-com.svg" alt="Your Custom Logo" width={24} height={24} />
+              {/* Dynamic logo */}
+              <Image src={staticNav.logo} alt={`${staticNav.title} logo`} width={24} height={24} />
+              {/* Dynamic title */}
               <span className="sm:block ml-2 lg:text-2xl font-bold text-lg text-gray-900">
-                Coachella Valley Handyman
+                {staticNav.title}
               </span>
             </div>
           </div>
@@ -92,6 +79,6 @@ const Navbar: React.FC = () => {
       </DisclosurePanel>
     </Disclosure>
   );
-}
+};
 
 export default Navbar;

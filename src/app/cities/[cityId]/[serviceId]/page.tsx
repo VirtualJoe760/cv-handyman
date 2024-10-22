@@ -2,6 +2,7 @@ import React from "react";
 import VariableHero from "@/components/VariableHero";
 import { allServices } from "@/constants/allServices";
 import Contact from "@/app/components/Contact";
+import { servicePageContent } from "@/constants/staticContent"; // Import static content
 
 // Define the type for the service object
 export interface Service {
@@ -28,9 +29,9 @@ const Page: React.FC<{ params: Params }> = ({ params }) => {
   if (!service) {
     return (
       <div>
-        <p>Service not found</p>
+        <p>{servicePageContent.serviceNotFound.message}</p>
         <a href="/our-services" className="text-blue-500 hover:underline">
-          Go back to services
+          {servicePageContent.serviceNotFound.backToServices}
         </a>
       </div>
     );
@@ -51,7 +52,7 @@ const Page: React.FC<{ params: Params }> = ({ params }) => {
       <div className="mx-5 2xl:px-80 lg:px-40 my-10 py-10 px-2">
         <h1 className="py-10 text-6xl">{service.heading}</h1>
         <h3 className="text-2xl ml-5">Estimated Price: {service.price}</h3>
-        <p className="ml-5 py-10 text-3xl justify-start leading-loose">{service.body}</p>
+        <p className="ml-5 py-10 text-xl justify-start leading-loose">{service.body}</p>
       </div>
 
       <Contact />

@@ -2,7 +2,6 @@
 
 import { todayDate } from '@/utils/todayDate'; // Correct import for todayDate
 
-// Define the props type for the modal
 interface PrivacyPolicyModalProps {
   isOpen: boolean;
   closeModal: () => void;
@@ -12,11 +11,18 @@ const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ isOpen, closeMo
   if (!isOpen) return null; // Only render the modal if isOpen is true
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white rounded-lg shadow-lg max-w-2xl w-full p-6">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">Privacy Policy</h2>
-        <div className="overflow-y-auto max-h-96">
-          <p>**Effective Date:** {todayDate()}</p>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+      aria-labelledby="privacy-policy-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div className="bg-white rounded-lg shadow-lg max-w-2xl w-full p-6" role="document">
+        <h2 id="privacy-policy-title" className="text-xl font-bold text-gray-800 mb-4">
+          Privacy Policy
+        </h2>
+        <div className="overflow-y-auto max-h-96" aria-live="polite">
+          <p><strong>Effective Date:</strong> {todayDate()}</p>
           <p className="mt-4">
             At Coachella Valley Handyman (corporate name: Hughes Home Services), we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and store the personal information you provide to us. By using our services and providing us with your information, you consent to the terms outlined below.
           </p>
@@ -40,7 +46,7 @@ const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ isOpen, closeMo
           </p>
           <ul className="list-disc ml-6 mt-2">
             <li>Phone: +1 (760) 797-5434</li>
-            <li>Email: developer.hugheshs@gmail.com</li>
+            <li>Email: <a href="mailto:developer.hugheshs@gmail.com" className="text-blue-500 hover:underline">developer.hugheshs@gmail.com</a></li>
             <li>Managing Officer: Hughes Underdahl</li>
           </ul>
         </div>
@@ -50,6 +56,7 @@ const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ isOpen, closeMo
             type="button"
             onClick={closeModal}
             className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-500"
+            aria-label="Close privacy policy"
           >
             Close
           </button>

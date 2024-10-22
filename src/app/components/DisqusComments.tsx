@@ -23,7 +23,7 @@ const DisqusComments: React.FC<DisqusCommentsProps> = ({ postTitle, postSlug }) 
   };
 
   return (
-    <div className="mt-10">
+    <div className="mx-5 2xl:px-80 lg:px-40 my-10 py-10 px-2">
       {isClient && (
         <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       )}

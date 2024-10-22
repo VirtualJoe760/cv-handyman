@@ -18,8 +18,10 @@ const ContactFormSubmission: React.FC<ContactFormSubmissionProps> = ({ agreed, s
             checked={agreed}
             onChange={setAgreed}
             className="group flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 data-[checked]:bg-indigo-600"
+            aria-checked={agreed} // Accessible state for screen readers
+            aria-label="Agree to privacy policy" // Descriptive aria label
           >
-            <span className="sr-only">Agree to policies</span>
+            <span className="sr-only">Agree to privacy policy</span> {/* For screen readers */}
             <span
               aria-hidden="true"
               className="h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out group-data-[checked]:translate-x-3.5"
@@ -32,6 +34,7 @@ const ContactFormSubmission: React.FC<ContactFormSubmissionProps> = ({ agreed, s
             type="button"
             onClick={openModal}
             className="font-semibold text-indigo-600 hover:underline"
+            aria-label="Read our privacy policy"
           >
             privacy policy
           </button>.
@@ -40,7 +43,7 @@ const ContactFormSubmission: React.FC<ContactFormSubmissionProps> = ({ agreed, s
 
       {/* Error Message */}
       {formError && (
-        <div className="sm:col-span-2 text-red-600 text-sm">
+        <div className="sm:col-span-2 text-red-600 text-sm" aria-live="assertive">
           {formError}
         </div>
       )}

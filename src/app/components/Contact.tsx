@@ -42,11 +42,11 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="isolate bg-white px-6 py-12 sm:py-16 lg:px-4">
+    <section id="contact" className="isolate bg-white px-6 py-12 sm:py-16 lg:px-4" aria-labelledby="contact-heading">
       <div className="mx-auto max-w-4xl text-center">
-        <h1 className="text-5xl text-black">Contact Us</h1>
+        <h1 id="contact-heading" className="text-5xl text-black">Contact Us</h1>
       </div>
-      <form onSubmit={handleSubmit} className="mx-auto mt-12 max-w-xl sm:mt-16">
+      <form onSubmit={handleSubmit} className="mx-auto mt-12 max-w-xl sm:mt-16" aria-describedby="contact-description">
         <CustomerContact formData={formData} handleChange={handleChange} />
         <CustomerService formData={formData} handleChange={handleChange} />
         <ContactFormSubmission 
@@ -56,11 +56,19 @@ const Contact: React.FC = () => {
           formError={formError}
         />
         {/* Modal for Privacy Policy */}
-        {isOpen && <PrivacyPolicyModal isOpen={isOpen} closeModal={closeModal} />}
+        {isOpen && (
+          <PrivacyPolicyModal 
+            isOpen={isOpen} 
+            closeModal={closeModal} 
+            aria-labelledby="privacy-policy-title" 
+            aria-describedby="privacy-policy-description"
+          />
+        )}
         <div className="mt-10">
           <button
             type="submit"
             className="block w-full rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm text-white shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            aria-label="Submit the contact form"
           >
             Let&apos;s talk
           </button>

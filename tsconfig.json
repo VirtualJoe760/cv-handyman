@@ -19,7 +19,7 @@
     "baseUrl": ".",  // Keep this to root
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ],
       "@/components/*": [
         "./src/app/components/*"

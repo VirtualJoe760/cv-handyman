@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image'; // If feasible for background optimization
 
 interface VariableHeroProps {
   backgroundImage: string;
@@ -19,15 +20,26 @@ const VariableHero: React.FC<VariableHeroProps> = ({ backgroundImage, serviceNam
         <meta property="og:type" content="website" />
         <meta property="og:url" content={typeof window !== "undefined" ? window.location.href : ""} />
       </Head>
-      
+
       <div
         className="relative bg-cover bg-center h-96 flex items-center justify-center text-white"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-        aria-label={`Hero image for ${serviceName}`}
+        style={{
+          backgroundImage: `url(${backgroundImage}), url('/path-to-low-quality-placeholder.jpg')`, // Low-quality image fallback
+        }}
+        aria-label={`Background hero image for ${serviceName}`}
       >
+        {/* Fallback Image for performance */}
+        <Image
+          src={backgroundImage}
+          alt={`Hero image for ${serviceName}`}
+          fill
+          priority
+          className="absolute inset-0 object-cover"
+        />
+
         <div className="absolute inset-0 bg-black opacity-50"></div>
+
         <div className="relative z-10 text-center px-4">
-          <span className="sr-only">{`Background image for ${serviceName}`}</span>
           <h1 className="text-4xl font-bold sm:text-5xl lg:text-6xl">{serviceName}</h1>
           <p className="mt-4 max-w-lg mx-auto text-lg sm:text-xl lg:text-2xl">{description}</p>
         </div>

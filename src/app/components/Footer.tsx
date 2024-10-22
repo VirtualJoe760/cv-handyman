@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const navigation = {
   main: [
@@ -12,7 +13,7 @@ const navigation = {
   social: [
     {
       name: 'Facebook',
-      href: 'www.facebook.com',
+      href: 'https://www.facebook.com',
       icon: (props: React.SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -25,7 +26,7 @@ const navigation = {
     },
     {
       name: 'Instagram',
-      href: 'www.instagram.com',
+      href: 'https://www.instagram.com',
       icon: (props: React.SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -46,22 +47,29 @@ const Footer: React.FC = () => {
         <nav aria-label="Footer" className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12">
           {navigation.main.map((item) => (
             <div key={item.name} className="pb-6">
-              <a href={item.href} className="text-sm leading-6 text-black hover:text-blue-500">
-                {item.name}
-              </a>
+              {/* Use Link for internal navigation */}
+              {item.href.startsWith('http') ? (
+                <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-sm leading-6 text-black hover:text-blue-500">
+                  {item.name}
+                </a>
+              ) : (
+                <Link href={item.href} className="text-sm leading-6 text-black hover:text-blue-500">
+                  {item.name}
+                </Link>
+              )}
             </div>
           ))}
         </nav>
         <div className="mt-10 flex justify-center space-x-10">
           {navigation.social.map((item) => (
-            <a key={item.name} href={item.href} className="text-black hover:text-blue-500">
+            <a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer" className="text-black hover:text-blue-500">
               <span className="sr-only">{item.name}</span>
               <item.icon aria-hidden="true" className="h-6 w-6" />
             </a>
           ))}
         </div>
         <p className="mt-10 text-center text-xs leading-5 text-black">
-          &copy; Coachella Valley Handyman, Hughes Home Services,  All rights reserved.
+          &copy; Coachella Valley Handyman, Hughes Home Services, All rights reserved.
         </p>
       </div>
     </footer>

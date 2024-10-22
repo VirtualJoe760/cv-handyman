@@ -16,9 +16,7 @@ export default async function PostPage({
 }: {
   params: { section: string; slugId: string };
 }) {
-  console.log('Params:', params); // Debugging params
-
-  const { slugId } = params;
+  const { slugId, section } = params; // Destructure section from params
   const post: Post = await getPostBySlug(slugId);
 
   // Convert markdown content to HTML
@@ -44,10 +42,10 @@ export default async function PostPage({
       </section>
 
       {/* QuickContact component */}
-      <QuickContact />
+      <QuickContact section={section} /> {/* Pass the section prop here */}
 
       {/* Disqus Comments Section */}
-      <div className="mx-5 2xl:px-80 lg:px-40 my-10 py-10 px-2"> {/* Added padding/margin here */}
+      <div className="mx-5 2xl:px-80 lg:px-40 my-10 py-10 px-2">
         <DisqusComments 
           postSlug={slugId} 
           postTitle={post.title}

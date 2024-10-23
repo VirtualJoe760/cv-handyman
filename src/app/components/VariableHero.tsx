@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 import Image from 'next/image'; // If feasible for background optimization
 
 interface VariableHeroProps {
@@ -11,16 +10,6 @@ interface VariableHeroProps {
 const VariableHero: React.FC<VariableHeroProps> = ({ backgroundImage, serviceName, description }) => {
   return (
     <>
-      <Head>
-        <title>{`${serviceName} | Coachella Valley Handyman`}</title>
-        <meta name="description" content={description} />
-        <meta property="og:title" content={`${serviceName} | Coachella Valley Handyman`} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={backgroundImage} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={typeof window !== "undefined" ? window.location.href : ""} />
-      </Head>
-
       <div
         className="relative bg-cover bg-center h-96 flex items-center justify-center text-white"
         style={{

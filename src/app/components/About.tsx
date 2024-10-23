@@ -30,7 +30,7 @@ const About: React.FC = () => {
                   <p className="mt-2 max-w-lg text-md text-black">
                     {card.body}
                     {card.link.external ? (
-                      <a
+                      <Link
                         href={card.link.href}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -38,7 +38,7 @@ const About: React.FC = () => {
                         aria-label={`Link to external site: ${card.link.text}`}
                       >
                         {card.link.text}
-                      </a>
+                      </Link>
                     ) : (
                       <Link
                         href={card.link.href}

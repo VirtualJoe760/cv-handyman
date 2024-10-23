@@ -4,6 +4,7 @@ import { coachellaValleyCities } from '@/constants/citiesArray';
 import ServicesList from '@/app/components/ServicesList';
 import Reviews from '@/app/components/Reviews';
 import { cityPageContent } from '@/constants/staticContent'; // Import the static content
+import Head from 'next/head'; // For meta tags
 
 // Define the types for city
 export interface City {
@@ -13,6 +14,10 @@ export interface City {
   heading: string;
   population: number;
   body: string;
+  keywords: {
+    main: string[];
+    secondary: string[];
+  }
 }
 
 interface Params {
@@ -40,6 +45,21 @@ const CityPage: React.FC<{ params: Params }> = ({ params }) => {
 
   return (
     <>
+      {/* SEO and OG tags */}
+      <Head>
+        <title>{`${city.name} | Coachella Valley Handyman Services`}</title>
+        <meta name="description" content={city.description} />
+        <meta name="keywords" content={[...city.keywords.main, ...city.keywords.secondary].join(', ')} />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content={city.heading} />
+        <meta property="og:description" content={city.description} />
+        <meta property="og:image" content={backgroundImagePath} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://coachellavalleyhandyman.com/cities/${cityId}`} />
+      </Head>
+
+      {/* Hero Section */}
       <VariableHero
         backgroundImage={backgroundImagePath}
         serviceName={city.name}

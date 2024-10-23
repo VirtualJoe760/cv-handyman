@@ -16,7 +16,7 @@ export default async function RootLayout({
     <html lang="en">
       <head>
         {/* Meta Tags for SEO */}
-        <title>{seoData?.title || 'Coachella Valley Handyman - Your Trusted Local Service'}</title>
+        <title>{seoData?.title || 'Coachella Valley Handyman - Your Trusted Local Handyman'}</title>
         <meta
           name="description"
           content={
@@ -25,12 +25,12 @@ export default async function RootLayout({
           }
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content={seoData?.ogTitle || 'Coachella Valley Handyman'} />
+        <meta property="og:title" content={seoData?.ogTitle || 'Coachella Valley Handyman || No task to big or small'} />
         <meta
           property="og:description"
           content={
             seoData?.ogDescription ||
-            'Coachella Valley Handyman offers expert services for your home improvement needs. Contact us today to schedule an appointment.'
+            'Coachella Valley Handyman offers expert services. Contact us today to schedule an appointment.'
           }
         />
         <meta property="og:image" content={seoData?.ogImage} />

@@ -40,7 +40,6 @@ export default async function RootLayout({
         
         {/* Favicon */}
         <link rel="icon" href="{seoData?.favicon}" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href={seoData.favicon} />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body>

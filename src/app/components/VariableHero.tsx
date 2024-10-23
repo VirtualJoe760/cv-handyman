@@ -13,7 +13,7 @@ const VariableHero: React.FC<VariableHeroProps> = ({ backgroundImage, serviceNam
       <div
         className="relative bg-cover bg-center h-96 flex items-center justify-center text-white"
         style={{
-          backgroundImage: `url(${backgroundImage}), url('/path-to-low-quality-placeholder.jpg')`, // Low-quality image fallback
+          backgroundImage: `url(${backgroundImage}), url('/path-to-low-quality-placeholder.jpg')`,
         }}
         aria-label={`Background hero image for ${serviceName}`}
       >

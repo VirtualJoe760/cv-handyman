@@ -5,6 +5,7 @@ export interface Service {
   description: string;
   body: string;
   heading: string;
+  keywords: string[];
 }
 
 export const allServices: Service[] = [
@@ -13,263 +14,328 @@ export const allServices: Service[] = [
     service: "General Handyman Services",
     price: "$150/h",
     description: "For any general handyman needs not listed, we've got you covered. Fast, reliable service for various home repair jobs.",
-    body: "When unexpected issues arise around your home, you need a reliable handyman to take care of it all. Our General Handyman Services are essential for ensuring your home remains in top shape. Whether it’s tightening that loose doorknob or fixing a leak under the sink, we handle it with care and professionalism. You don’t have to worry about finding different specialists for each job. Coachella Valley Handyman provides a comprehensive solution for all your household needs! Don't let those minor repairs turn into major problems—contact us today!",
-    heading: "General Handyman Services: Because Every Home Needs a Hero!"
+    body: "When things around your home start to show wear and tear, or unexpected issues arise, you don’t have to look far for expert help. Coachella Valley Handyman is your trusted partner for all general handyman needs, offering fast, reliable, and comprehensive services to keep your home running smoothly. From fixing that leaky faucet to tightening loose door handles, our experienced team handles every task with the care and professionalism you deserve.\n\nAt Coachella Valley Handyman, we understand that every home is unique, and so are its needs. Whether you're dealing with minor repairs or larger maintenance tasks, our team is equipped to tackle jobs of all sizes. You no longer need to hire multiple specialists for various repairs—we cover it all, saving you time, stress, and money. We are proud to be the go-to handyman service for homeowners throughout the Coachella Valley, known for our dependable work and commitment to excellence.\n\nOur brand is built on more than just technical skills; it’s built on trust. We know that letting someone into your home is a big decision, which is why we prioritize communication, transparency, and customer satisfaction with every job we undertake. You can count on us for prompt service, clear explanations, and honest pricing. Every project, no matter how big or small, is approached with the same attention to detail, ensuring that your home remains in top condition.\n\nDon't let small issues turn into costly problems—whether it's routine maintenance or urgent repairs, Coachella Valley Handyman is here to help. Contact us today and experience the peace of mind that comes with having a reliable, professional handyman at your service.",
+    heading: "General Handyman Services: Reliable Solutions for Every Home in Coachella Valley",
+    keywords: ["general handyman services", "home repair", "household repairs", "handyman Coachella Valley", "home maintenance", "Coachella Valley handyman", "local handyman services", "reliable handyman"]
   },
   {
-    id: "garbage-disposal-install",
-    service: "Garbage Disposal Install",
-    price: "$140",
-    description: "Quick and professional installation of your garbage disposal. Get your kitchen back in action. (Parts not included)",
-    body: "Installing a garbage disposal can be tricky, but our team makes it look easy! This essential kitchen appliance ensures that food waste is managed effectively, keeping your kitchen clean and functional. Whether you’re upgrading from an older model or getting one for the first time, we ensure a hassle-free installation. Say goodbye to kitchen clogs and enjoy smooth operation once again! Coachella Valley Handyman guarantees a quick, clean, and efficient installation that you can rely on for years. Ready to upgrade? Give us a call!",
-    heading: "Garbage Disposal Install: Making Your Kitchen Waste Disappear Like Magic!"
+    "id": "garbage-disposal-installation",
+    "service": "Garbage Disposal Installation",
+    "price": "$250 flat rate",
+    "description": "Efficient installation of garbage disposals, helping to keep your kitchen clean and free of waste buildup.",
+    "keywords": ["garbage disposal installation", "kitchen plumbing", "appliance installation", "waste management"],
+    "heading": "Garbage Disposal Installation: Keep Your Kitchen Running Smoothly",
+    "body": "Your kitchen’s functionality depends on an efficient waste management system, and nothing is more essential than a well-installed garbage disposal. At Coachella Valley Handyman, we specialize in professional garbage disposal installation, ensuring your kitchen remains clean, odor-free, and convenient to use. Whether you’re replacing an old unit or installing a new one, we take care of the entire process, from safely removing your old disposal to securely fitting the new one, following all safety and plumbing guidelines. \n\nOur installation service doesn’t just stop at getting the unit installed—we make sure it works flawlessly with your existing plumbing and electrical systems, providing long-lasting functionality. No more worrying about jams or breakdowns! Our team has years of experience working with top disposal brands, and we’re ready to get your kitchen back to running smoothly. \n\nWhy risk DIY installations or improperly fitted disposals that can cause expensive damage? Trust Coachella Valley Handyman for a clean, professional installation that guarantees efficiency and durability. Our $250 flat rate ensures you know what you're paying upfront, with no hidden costs. Contact us today to set up your garbage disposal installation and experience hassle-free kitchen operations!"
   },
+  
   {
-    id: "ceiling-fan-install",
-    service: "Ceiling Fan Install",
-    price: "$155",
-    description: "Efficient ceiling fan installation to keep your rooms cool and comfortable. Typically done in about an hour.",
-    body: "Feeling the heat? A new ceiling fan can make all the difference in keeping your home cool and energy-efficient. Imagine a hot summer day with a refreshing breeze, all thanks to your newly installed fan! Our quick and professional service typically takes about an hour, allowing you to sit back and relax under the cool breeze without any hassle. Let us help you keep your home comfortable and stylish with expert ceiling fan installation. Contact us today to get started!",
-    heading: "Ceiling Fan Install: Keeping You Cool When the Heat Is On!"
+    "id": "ceiling-fan-install",
+    "service": "Ceiling Fan Install",
+    "price": "$155",
+    "description": "Professional ceiling fan installation for keeping your home cool and energy-efficient. Completed in about an hour.",
+    "keywords": ["ceiling fan installation", "cooling solutions", "energy-efficient home", "Coachella Valley electrical services"],
+    "heading": "Ceiling Fan Install: Stay Cool and Comfortable Year-Round",
+    "body": "A ceiling fan isn’t just a luxury—it’s a necessity for maintaining a comfortable, energy-efficient home in the Coachella Valley’s hot climate. At Coachella Valley Handyman, we specialize in ceiling fan installation that not only helps regulate your indoor temperature but also cuts down on energy costs. By circulating air efficiently, a ceiling fan can reduce the need for air conditioning, especially during those scorching summer months. \n\nOur professional ceiling fan installation is designed to be quick, efficient, and hassle-free. We ensure that your fan is securely mounted, properly wired, and optimally positioned for maximum airflow. Whether it’s a new installation or replacing an old, noisy fan, we take care of the entire process, including mounting, balancing, and testing the fan to ensure smooth operation. Typically completed in about an hour, our service allows you to enjoy the comfort of a cool breeze with minimal disruption. \n\nDon't let the heat get the best of you this summer. With Coachella Valley Handyman, you can enjoy a refreshingly cool home without the hefty energy bills. Whether you're looking to add a fan to your living room, bedroom, or patio, our expert installation ensures everything is done right the first time. Contact us today to schedule your ceiling fan installation and start feeling the difference!"
   },
+  
   {
-    id: "tv-mounting",
-    service: "TV Mounting",
-    price: "$155",
-    description: "Securely mount your TV on the wall for the perfect viewing experience, no mess, no hassle.",
-    body: "Ready to take your binge-watching to new heights? Mounting a TV can be nerve-wracking, especially if you’re concerned about it staying secure. But don’t worry—we take the stress out of the process with expert TV mounting that guarantees safety and the perfect viewing angle. Our goal is to create a sleek, polished look with zero hassle. Get the most out of your TV by letting Coachella Valley Handyman install it professionally! If you want to enjoy a clutter-free viewing experience, reach out to us today!",
-    heading: "TV Mounting: Elevate Your Viewing Experience to New Heights!"
+    "id": "tv-mounting",
+    "service": "TV Mounting",
+    "price": "$155",
+    "description": "Securely mount your TV on the wall for the perfect viewing experience. No mess, no hassle.",
+    "keywords": ["TV mounting", "home entertainment installation", "wall-mounted TV", "Coachella Valley TV installation"],
+    "heading": "TV Mounting: Perfect Your Home Entertainment Setup",
+    "body": "Transform your living room into the ultimate entertainment hub with Coachella Valley Handyman’s professional TV mounting service. We understand that mounting a TV can feel like a daunting task, especially when precision and safety are key to getting the best results. That's where we come in. Whether you want your TV mounted over the fireplace or at the ideal height in your bedroom or living room, we ensure a flawless installation that not only looks sleek but is also incredibly secure. \n\nOur TV mounting service includes more than just hanging your TV on the wall. We carefully select the perfect mount for your setup, whether it's a fixed, tilt, or full-motion mount, and we ensure that all cables are neatly concealed to maintain a clean, clutter-free look. We also make sure your TV is perfectly leveled and positioned at the best viewing angle, providing you with the ultimate home entertainment experience. \n\nSay goodbye to the stress of figuring out where to drill or how to hide messy wires. Our professional installers take care of every detail, so you can sit back, relax, and enjoy your favorite shows and movies with crystal-clear viewing from any seat in the room. Whether you're mounting a sleek new flat-screen or upgrading your current setup, Coachella Valley Handyman offers the expertise you need for a seamless, worry-free installation. Contact us today to schedule your TV mounting service!"
   },
+  
   {
-    id: "tv-mounting-cord-hiding",
-    service: "TV Mounting with In-Wall Cord Hiding",
-    price: "$300+",
-    description: "Mount your TV and neatly hide cables behind the wall, with drywall repairs, painting, and a polished finish. Additional charges apply for complex structures.",
-    body: "Want to enjoy a clean, cable-free look for your wall-mounted TV? Our in-wall cord hiding service ensures that all the wires disappear behind the wall for a neat and professional finish. We not only securely mount your TV but also handle drywall repairs, patching, and painting to make sure everything looks perfect. Whether it’s a simple job or a more complex one involving fire blocks, Coachella Valley Handyman will create a seamless entertainment setup you'll love.",
-    heading: "TV Mounting with In-Wall Cord Hiding: Say Goodbye to Cable Clutter!"
+    "id": "tv-mounting-cord-hiding",
+    "service": "TV Mounting with In-Wall Cord Hiding",
+    "price": "$300+",
+    "description": "Mount your TV and neatly hide cables behind the wall, with drywall repairs, painting, and a polished finish. Additional charges apply for complex structures.",
+    "keywords": ["TV mounting", "in-wall cord hiding", "cable management", "Coachella Valley TV installation", "home entertainment setup"],
+    "heading": "TV Mounting with In-Wall Cord Hiding: Create a Clean, Cable-Free Look",
+    "body": "Are unsightly cables ruining the sleek look of your wall-mounted TV? At Coachella Valley Handyman, we offer a premium service that not only mounts your TV securely but also hides all those pesky wires inside the wall, leaving you with a clean, polished appearance. No more dangling cables—just a perfectly mounted TV and a pristine wall to complete your home entertainment setup.\n\nOur in-wall cord hiding service goes beyond the basics. We ensure that the wires for your TV, sound system, and other devices are expertly concealed, while taking care of any necessary drywall repairs, patching, and painting for a seamless finish. Whether you’re dealing with a straightforward installation or a more complex setup that requires navigating fire blocks or other structural elements, we’ve got you covered. Our team is skilled at creating an aesthetically pleasing entertainment space that’s free from clutter.\n\nIf you’re tired of looking at messy wires or want to prevent kids and pets from getting tangled in cords, this service is the perfect solution. Plus, we handle all the details—so you don’t have to. From choosing the right mount to finishing up the paintwork, Coachella Valley Handyman provides a full-service experience, ensuring everything is done to the highest standard. Enjoy your favorite shows and movies with a clean, sophisticated setup—contact us today to schedule your TV mounting with in-wall cord hiding!"
   },
+  
   {
-    id: "angle-stops-install",
-    service: "Angle Stops Install",
-    price: "$150",
-    description: "Install or replace angle stops to ensure your home’s plumbing system operates smoothly. Parts not included.",
-    body: "Angle stops are a small but vital part of your home’s plumbing, ensuring that water can be quickly turned off during repairs or emergencies. If you’re experiencing issues with water pressure or leaks, we can install new angle stops or replace old ones, keeping your plumbing running smoothly. At Coachella Valley Handyman, we ensure the job is done right the first time, saving you potential headaches down the road. Trust us for professional installation that keeps your plumbing system in top shape.",
-    heading: "Angle Stops Install: Because Plumbing Shouldn’t Be a Splash Zone!"
+    "id": "angle-stops-install",
+    "service": "Angle Stops Install",
+    "price": "$150",
+    "description": "Install or replace angle stops to ensure your home’s plumbing system operates smoothly. Parts not included.",
+    "keywords": ["angle stops installation", "plumbing repair", "Coachella Valley plumbing", "water pressure issues", "emergency plumbing services"],
+    "heading": "Angle Stops Install: Prevent Plumbing Problems Before They Start!",
+    "body": "Angle stops may be small, but they play a crucial role in your home’s plumbing system. These valves allow you to quickly shut off water to individual fixtures during repairs, replacements, or emergencies. If you’ve been dealing with water pressure problems, leaks, or outdated plumbing, installing or replacing angle stops is an essential maintenance step.\n\nAt Coachella Valley Handyman, we specialize in professional angle stop installation and replacement services. Whether your existing valves are old and worn out, or you need new ones installed for peace of mind, we handle the job with precision and care. Our expert team ensures that your plumbing system operates smoothly, minimizing the risk of unexpected water damage or costly repairs down the line.\n\nDon’t let small plumbing issues turn into major headaches. Properly installed angle stops give you control over your water flow, helping to prevent leaks and make repairs easier. With Coachella Valley Handyman, you can count on reliable service and quality workmanship. We know that your home deserves the best, and we’re here to ensure that your plumbing system remains efficient and problem-free.\n\nIf you’ve noticed leaks, inconsistent water pressure, or just want to update your plumbing system for better functionality, it’s time to get your angle stops checked. Schedule a professional installation today, and let us help you avoid future plumbing disasters!"
   },
+  
   {
-    id: "drywall-repair",
-    service: "Drywall Repair",
-    price: "$270+",
-    description: "Fix holes and damage in your drywall. Repair includes multiple visits for drying time, texture matching, and paint. Pricing varies by damage severity.",
-    body: "Drywall damage can feel like a major eyesore, whether it’s a small hole or something bigger. But don’t worry—Coachella Valley Handyman is here to make your walls look like new again! Our drywall repair service takes care of patching, smoothing, and texture matching so that the repair blends in seamlessly with the rest of your wall. Multiple visits may be necessary to ensure proper drying and finishing, but the result will be a flawless wall that looks brand new. Let us handle your drywall repair with expert care.",
-    heading: "Drywall Repair: Fixing Holes So You Don’t Have to Live with a Patchwork Quilt!"
+    "id": "drywall-repair",
+    "service": "Drywall Repair",
+    "price": "$270+",
+    "description": "Fix holes and damage in your drywall. Repair includes multiple visits for drying time, texture matching, and paint. Pricing varies by damage severity.",
+    "keywords": ["drywall repair", "wall repair services", "texture matching", "drywall patching", "Coachella Valley handyman", "paint and drywall restoration"],
+    "heading": "Drywall Repair: Restoring Your Walls to Flawless Perfection!",
+    "body": "When your drywall is damaged, even the smallest hole or crack can become an unsightly issue. Whether it's caused by accidental bumps, nail holes, or something larger, damaged drywall can make a room look unfinished and neglected. But there’s no need to live with those imperfections—Coachella Valley Handyman offers expert drywall repair services that restore your walls to their original, flawless state.\n\nOur comprehensive drywall repair process includes patching, sanding, texture matching, and painting to ensure that the repair blends seamlessly with the rest of your wall. No patchy, uneven fixes—just smooth, professional results. Multiple visits may be required to allow for drying time, proper texture matching, and finishing, but our attention to detail ensures that your wall will look as good as new when the job is complete.\n\nAt Coachella Valley Handyman, we understand the importance of quality workmanship, especially when it comes to something as visible as your walls. Our experienced team takes pride in delivering top-notch drywall repairs that are virtually invisible once finished. From small holes to larger repairs, we handle each project with precision and care, so your home can look its best.\n\nDon’t let damaged drywall take away from the beauty of your living space. Whether you're dealing with minor cracks or more severe damage, we have the expertise to make your walls look perfect again. Contact us today for a consultation and get your drywall repaired by the experts at Coachella Valley Handyman!"
   },
+  
   {
-    id: "prehung-door-hanging",
-    service: "Prehung Door Hanging",
-    price: "$500+",
-    description: "Professional installation of prehung doors, customized to fit your home. Price varies by door size and style.",
-    body: "Prehung doors offer a quick and effective way to update your home’s interior or exterior, but they need to be installed correctly to function properly. At Coachella Valley Handyman, we provide expert door hanging services, ensuring a precise fit and smooth operation. Whether you’re replacing an old door or upgrading to a new style, we handle all the details, including leveling and securing the door frame. Don’t struggle with DIY—let us install your prehung door to perfection!",
-    heading: "Prehung Door Hanging: Because Your Door Deserves a Grand Entrance!"
+    "id": "prehung-door-hanging",
+    "service": "Prehung Door Hanging",
+    "price": "$500+",
+    "description": "Professional installation of prehung doors, customized to fit your home. Price varies by door size and style.",
+    "keywords": ["prehung door installation", "door hanging services", "interior door installation", "exterior door hanging", "Coachella Valley Handyman", "door fitting service"],
+    "heading": "Prehung Door Hanging: Because Your Door Deserves a Grand Entrance!",
+    "body": "A door isn't just a functional part of your home—it's an important design feature that sets the tone for every room. Whether it's an entry door that welcomes guests or an interior door that provides privacy and style, having your prehung door installed perfectly is essential for smooth operation and a flawless finish. At Coachella Valley Handyman, we specialize in professional prehung door hanging, ensuring that each door is installed with precision and care.\n\nPrehung doors come with the frame already attached, making them a popular choice for both new installations and replacements. However, proper installation is key to ensuring the door hangs level, swings smoothly, and seals correctly. Our experienced team handles everything from securing the door frame to ensuring that the door aligns perfectly with the rest of your home’s design. Whether you're upgrading your interior doors or giving your entryway a fresh look, we customize the installation to suit your needs and style preferences.\n\nNo need to struggle with heavy doors or complicated DIY projects. We take care of all the intricate details, including leveling, frame adjustments, and securing the hardware, to ensure your door functions seamlessly. Plus, we work with a variety of door styles—whether it's a solid wood door, a panel door, or a custom design, we guarantee expert results.\n\nLet Coachella Valley Handyman take the hassle out of your door installation. With our professional prehung door hanging service, you can be confident that your doors will not only look great but also work perfectly for years to come. Contact us today to schedule your installation and give your home the upgrade it deserves!"
   },
+  
   {
-    id: "door-service",
-    service: "Door Service",
-    price: "$150",
-    description: "Reseal or weatherproof your doors for energy efficiency or fix sliding doors for smooth operation. Includes silicone greasing.",
-    body: "A door that doesn’t close properly or lets drafts in can be a major annoyance. Our door service ensures that your doors are sealed properly, keeping your home energy-efficient and secure. Whether it’s fixing weather stripping, greasing sliding doors, or replacing hardware, we make sure everything works smoothly. Coachella Valley Handyman guarantees a fast, efficient fix so that your doors are as good as new, improving both function and comfort.",
-    heading: "Door Service: Sealing the Deal on Energy Efficiency!"
+    "id": "door-service",
+    "service": "Door Service",
+    "price": "$150",
+    "description": "Reseal or weatherproof your doors for energy efficiency or fix sliding doors for smooth operation. Includes silicone greasing.",
+    "keywords": ["door resealing", "weatherproofing doors", "sliding door repair", "door maintenance", "energy-efficient doors", "Coachella Valley Handyman"],
+    "heading": "Door Service: Sealing the Deal on Energy Efficiency!",
+    "body": "Doors are more than just an entryway—they're crucial to your home's energy efficiency and security. A poorly sealed door can let drafts in, drive up your energy bills, or compromise the comfort of your living space. At Coachella Valley Handyman, we specialize in expert door servicing to ensure that your doors are weatherproofed, properly sealed, and functioning smoothly.\n\nWhether you're dealing with a drafty door, a sliding door that's stuck, or simply looking to improve your home’s energy efficiency, our door service has you covered. We expertly reseal and weatherproof doors, replace worn-out weather stripping, and grease sliding doors with silicone to ensure smooth operation. From fixing door hardware to addressing alignment issues, we make sure that every part of your door functions at its best.\n\nSliding doors that no longer glide effortlessly can be frustrating and a challenge to fix on your own. Our service takes care of the details, including track cleaning, lubricating, and adjusting to restore your sliding door’s functionality. We also ensure that hinged doors close securely, helping to prevent drafts, moisture, and pests from entering your home.\n\nNot only does a properly sealed and maintained door improve your home's energy efficiency, but it also enhances its security. With Coachella Valley Handyman, you can trust that we’ll get your doors working as good as new, whether it's a quick reseal or a complete overhaul of your sliding door system. Ready to upgrade your doors? Reach out today and let us take care of all your door service needs!"
   },
+  
   {
-    id: "bbq-cleaning",
-    service: "BBQ Cleaning or Service",
-    price: "$135/h",
-    description: "Keep your BBQ running smoothly with thorough cleaning or minor repairs. Based on one hour of labor.",
-    body: "Your BBQ grill is a big part of outdoor fun, but it needs regular cleaning and maintenance to perform at its best. Coachella Valley Handyman offers professional BBQ cleaning services that remove grease, grime, and build-up, preventing clogs and extending the life of your grill. We also handle minor repairs, so your BBQ is ready for your next cookout. Whether you use it every weekend or just for special occasions, keep your BBQ in great shape with our expert service!",
-    heading: "BBQ Cleaning: Because Even Your Grill Deserves a Spa Day!"
+    "id": "bbq-cleaning",
+    "service": "BBQ Cleaning or Service",
+    "price": "$135/h",
+    "description": "Keep your BBQ running smoothly with thorough cleaning or minor repairs. Based on one hour of labor.",
+    "keywords": ["BBQ cleaning", "grill maintenance", "outdoor grill service", "BBQ repair", "Coachella Valley Handyman"],
+    "heading": "BBQ Cleaning: Because Even Your Grill Deserves a Spa Day!",
+    "body": "Your BBQ grill is more than just a cooking tool—it's the heart of your outdoor gatherings. Whether you're grilling up burgers for the family or hosting a weekend barbecue with friends, your grill deserves regular care and attention to keep it performing at its best. At Coachella Valley Handyman, we provide professional BBQ cleaning and maintenance services that go beyond just scraping off grease. We meticulously clean your grill, removing built-up grease, carbon deposits, and debris that can cause uneven cooking or dangerous flare-ups.\n\nRoutine cleaning not only extends the life of your BBQ but also ensures that every meal is cooked to perfection. We'll deep clean the grates, burners, and other critical components, so your grill is always ready for action. Our service also includes inspecting the grill for signs of wear and tear, and we offer minor repairs to get your BBQ back in top shape. From fixing igniters to replacing worn-out parts, we handle the little issues before they become big problems.\n\nUsing your BBQ frequently? It’s important to have it cleaned professionally at least once a season. Even if you only fire it up occasionally, regular maintenance prevents clogs and build-up that can damage the grill over time. Coachella Valley Handyman ensures your grill is ready for all your cookouts, big or small, so you can enjoy hassle-free grilling whenever you like.\n\nDon’t let a dirty or malfunctioning BBQ ruin your next outdoor event. Give your grill the attention it deserves with our expert cleaning and servicing. Contact Coachella Valley Handyman today to schedule your BBQ’s 'spa day' and keep the good times—and the delicious food—rolling!"
   },
+  
   {
-    id: "property-service",
-    service: "Property Service",
-    price: "$135",
-    description: "Monthly property check and maintenance services, from weeding to general upkeep. Ideal for rental or vacant properties.",
-    body: "Owning rental or vacant properties comes with its own set of responsibilities. From basic maintenance like weeding and clearing debris to ensuring everything is in working order, we handle it all with our comprehensive property service. Regular upkeep not only keeps your property looking its best but also prevents larger issues down the line. Coachella Valley Handyman makes property management easy, giving you peace of mind while we take care of the hard work. Let us handle the monthly checkups so you don’t have to!",
-    heading: "Property Service: Your Home's Guardian Angel on Duty!"
+    "id": "property-service",
+    "service": "Property Service",
+    "price": "$135",
+    "description": "Monthly property check and maintenance services, from weeding to general upkeep. Ideal for rental or vacant properties.",
+    "keywords": ["property maintenance", "vacant property upkeep", "rental property services", "property management", "Coachella Valley Handyman"],
+    "heading": "Property Service: Your Home's Guardian Angel on Duty!",
+    "body": "Managing rental or vacant properties can be a demanding task, especially when you're juggling multiple responsibilities. Coachella Valley Handyman takes the stress out of property management with our dedicated Property Service, designed to keep your home or rental looking immaculate while preventing costly issues down the road. Whether it’s regular lawn care, weeding, clearing debris, or performing minor repairs, we ensure your property remains in top condition with our monthly maintenance checks.\n\nFor landlords, rental owners, or even seasonal homeowners, the appearance and functionality of a property are critical—not just for curb appeal but for avoiding bigger problems like pest infestations, leaks, or weather-related damage. Our team conducts thorough inspections to make sure everything is in working order, from the roof to the foundation. If we find any issues, we take immediate action to fix them, so you don't have to worry about potential damage piling up while you're away.\n\nVacant homes, in particular, need regular care. Weeds can grow wild, pests may move in, and dust can accumulate inside. Coachella Valley Handyman acts as your property’s personal caretaker, maintaining both the exterior and interior. With our service, you can rest easy knowing that we’re keeping an eye on everything, ensuring the home is safe, secure, and presentable.\n\nAvoid the headache of unexpected repairs and keep your property in prime condition all year round. Coachella Valley Handyman’s Property Service is the perfect solution for those who want peace of mind without the hassle of managing regular upkeep. Trust us to be your home’s 'guardian angel,' protecting your investment and making sure it’s always in its best shape."
   },
+  
   {
-    id: "sink-maintenance",
-    service: "Sink Maintenance",
-    price: "$140",
-    description: "Install a new faucet or fix leaks with expert sink maintenance. Fast, clean, and reliable service.",
-    body: "A leaky sink or outdated faucet can be more than just an annoyance—it can lead to higher water bills and potential damage over time. Our sink maintenance service covers everything from installing a brand-new faucet to fixing leaks quickly and efficiently. We make sure your plumbing works flawlessly, so you can enjoy a fully functional kitchen or bathroom without the hassle. Coachella Valley Handyman ensures expert care, leaving your sink in tip-top shape with minimal disruption to your day.",
-    heading: "Sink Maintenance: Let Us Fix Your Drip Before It Turns into a Flood!"
+    "id": "sink-maintenance",
+    "service": "Sink Maintenance",
+    "price": "$140",
+    "description": "Install a new faucet or fix leaks with expert sink maintenance. Fast, clean, and reliable service.",
+    "keywords": ["sink repair", "faucet installation", "plumbing maintenance", "leaky sink fix", "Coachella Valley Handyman"],
+    "heading": "Sink Maintenance: Let Us Fix Your Drip Before It Turns into a Flood!",
+    "body": "A leaky sink or outdated faucet isn't just an inconvenience—it can quietly cost you money on your water bill and cause gradual water damage to your cabinets or flooring if left unchecked. At Coachella Valley Handyman, we understand the importance of keeping your sink in perfect working order, which is why our Sink Maintenance service is designed to handle everything from faucet installations to leak repairs with the utmost care and precision.\n\nWhether you need a new faucet to modernize your kitchen or bathroom, or you want to stop that constant drip that’s driving you crazy, we’re here to help. Our expert technicians provide quick and reliable service, ensuring your plumbing is in top condition so that you can go about your day without any disruptions. We use high-quality materials, so you can rest assured that the repairs will last, and we always clean up thoroughly when we’re done.\n\nBeyond fixing immediate problems, our service helps prevent future issues. A small leak today could turn into a bigger, more expensive problem tomorrow. By addressing these concerns early, we help you avoid costly repairs down the road. Whether it’s adjusting the water pressure, replacing worn-out parts, or installing a completely new fixture, Coachella Valley Handyman has the expertise to keep your sink in top shape.\n\nWhy struggle with DIY fixes when you can have the peace of mind that comes with professional service? Let us take care of your sink maintenance needs efficiently and affordably, so you can enjoy a hassle-free, fully functional sink. Contact us today to schedule an appointment and let us keep your plumbing flowing smoothly!"
   },
+  
   {
-    id: "toilet-install",
-    service: "Toilet Install",
-    price: "$155",
-    description: "Standard toilet installation services, done quickly and efficiently. Get your bathroom in working order in no time.",
-    body: "Need a new toilet installed? We’ve got you covered! A properly installed toilet is crucial to maintaining the hygiene and comfort of your home. Whether you’re replacing an old, inefficient model or outfitting a new bathroom, Coachella Valley Handyman guarantees a swift and seamless installation. Our attention to detail ensures everything is watertight and in perfect working order. With our team, you’ll have a fully functioning toilet in no time, so you can move on with your day worry-free.",
-    heading: "Toilet Install: We Bring the Throne to Your Bathroom!"
+    "id": "toilet-install",
+    "service": "Toilet Install",
+    "price": "$155",
+    "description": "Standard toilet installation services, done quickly and efficiently. Get your bathroom in working order in no time.",
+    "keywords": ["toilet installation", "bathroom plumbing", "toilet replacement", "new toilet install", "Coachella Valley Handyman"],
+    "heading": "Toilet Install: We Bring the Throne to Your Bathroom!",
+    "body": "A toilet might not be the most glamorous part of your home, but it’s certainly one of the most important. Whether you’re upgrading to a more efficient model, dealing with a worn-out toilet, or finishing up a bathroom remodel, Coachella Valley Handyman is here to handle your toilet installation with speed, precision, and professionalism. Our team ensures a flawless installation, so you can rest easy knowing everything is watertight, secure, and ready for daily use.\n\nA poorly installed toilet can lead to leaks, wobbles, or even significant water damage over time. That’s why we take extra care to properly secure all fittings and connections, ensuring the job is done right the first time. From aligning the toilet base to tightening the seals, we make sure your new toilet fits perfectly and functions smoothly from day one. Our experience with various models means we can handle everything from basic toilets to more complex, modern designs.\n\nAt Coachella Valley Handyman, we understand how essential a functioning bathroom is to your household, which is why we prioritize fast, reliable service without sacrificing quality. No more worrying about unexpected leaks or constant trips to the hardware store—we’ve got the tools and expertise to get the job done right.\n\nWhy deal with the hassle and mess of DIY toilet installation when you can trust the experts to do it for you? We handle every step, from removing the old toilet to cleaning up after the installation, leaving you with a perfectly functioning bathroom. Let us take care of your toilet install quickly and efficiently, so you can get back to your routine with minimal disruption. Call Coachella Valley Handyman today for top-notch installation that guarantees peace of mind!"
   },
+  
   {
-    id: "drain-snaking",
-    service: "Drain Snaking",
-    price: "$150",
-    description: "Unclog sinks, toilets, and drains using a professional snake tool to keep your plumbing flowing smoothly.",
-    body: "Clogged drains are a common frustration that can disrupt your day-to-day life. Whether it’s a slow drain or a full blockage, our drain snaking service clears the problem fast. We use professional-grade snake tools to unclog your plumbing without causing damage, ensuring that water flows smoothly again. At Coachella Valley Handyman, we get to the root of the issue, so you don’t have to deal with recurring problems. Leave the tough work to us and get your home’s plumbing back to normal in no time.",
-    heading: "Drain Snaking: No More Clogs, Just Smooth Sailing!"
+    "id": "drain-snaking",
+    "service": "Drain Snaking",
+    "price": "$150",
+    "description": "Unclog sinks, toilets, and drains using a professional snake tool to keep your plumbing flowing smoothly.",
+    "keywords": ["drain snaking", "clogged drain", "plumbing services", "unclog sink", "Coachella Valley Handyman"],
+    "heading": "Drain Snaking: No More Clogs, Just Smooth Sailing!",
+    "body": "A clogged drain can quickly turn from a minor inconvenience into a major headache, causing everything from slow drainage to complete backups in your sinks, showers, or toilets. If you’ve ever tried to fix a stubborn clog yourself, you know it can be a messy, frustrating, and sometimes ineffective process. That’s where Coachella Valley Handyman comes in with our expert drain snaking service, designed to clear even the toughest blockages and restore your plumbing to full functionality.\n\nUsing professional-grade snake tools, we can reach deep into your pipes to clear out hair, grease, food debris, and other common clog culprits without damaging your plumbing system. Unlike chemical drain cleaners that can corrode pipes and provide only temporary relief, our snaking service is a long-lasting solution that gets to the root of the problem. We ensure that water flows freely and efficiently, so you can get back to using your sinks, toilets, and drains without worry.\n\nWhether you’re dealing with a kitchen sink that won’t drain, a bathtub that’s slow to empty, or a completely blocked toilet, our team at Coachella Valley Handyman handles it all with precision and care. We know how disruptive a clogged drain can be, which is why we prioritize fast, reliable service that minimizes inconvenience to your daily routine. With our expert help, you’ll have a smoothly running plumbing system in no time, without the hassle of repeated DIY attempts.\n\nAt Coachella Valley Handyman, we believe that no one should have to live with the frustration of clogged drains. That’s why we offer professional drain snaking services that take care of the issue once and for all. Call us today to schedule an appointment and say goodbye to drain clogs for good!"
   },
+  
   {
-    id: "dryer-vent-service",
-    service: "Dryer Vent Service",
-    price: "$135",
-    description: "Regular cleaning and maintenance of dryer vents to prevent clogs and potential fire hazards. Parts not included.",
-    body: "Over time, dryer vents can become clogged with lint and debris, which not only makes your dryer less efficient but also poses a serious fire risk. Our dryer vent cleaning service ensures that your vents are clear, improving air flow and reducing the chance of a fire hazard. We recommend this service as regular maintenance for any home. Coachella Valley Handyman will keep your dryer running safely and efficiently, so you can avoid costly repairs and dangerous situations.",
-    heading: "Dryer Vent Service: Keeping Your Dryer Safe and Sound!"
+    "id": "dryer-vent-service",
+    "service": "Dryer Vent Service",
+    "price": "$135",
+    "description": "Regular cleaning and maintenance of dryer vents to prevent clogs and potential fire hazards. Parts not included.",
+    "keywords": ["dryer vent cleaning", "dryer vent maintenance", "fire hazard prevention", "Coachella Valley Handyman", "vent cleaning services"],
+    "heading": "Dryer Vent Service: Keeping Your Dryer Safe and Sound!",
+    "body": "Your dryer works hard to keep your clothes fresh and clean, but did you know that over time, the vent system can get clogged with lint, debris, and dust? Not only does this reduce the efficiency of your dryer, leading to longer drying times and higher energy bills, but it also poses a significant fire hazard. In fact, dryer fires caused by blocked vents are one of the leading causes of house fires. At Coachella Valley Handyman, we offer thorough dryer vent cleaning services to keep your home safe and your dryer running smoothly.\n\nRegular maintenance of your dryer vent system is essential to ensure that air flows freely through the vent, allowing your dryer to operate at its best. Our team uses specialized tools to remove built-up lint and debris, preventing clogs and reducing the risk of a fire. By keeping your vent system clean, you’ll also extend the lifespan of your dryer, reduce wear and tear on the appliance, and save on energy costs. It’s a win-win for both your home and your wallet!\n\nWe recommend scheduling a dryer vent service at least once a year, especially if you use your dryer frequently. Coachella Valley Handyman provides professional cleaning that not only eliminates clogs but also inspects the system for any potential issues, ensuring that your dryer is operating as safely and efficiently as possible. In addition to cleaning, we can identify any necessary repairs or replacements to maintain optimal performance.\n\nDon’t wait until your dryer is struggling or, worse, until you smell something burning. Let Coachella Valley Handyman take care of your dryer vent maintenance with expert care and attention to detail. We help you avoid costly repairs, extend the life of your dryer, and, most importantly, protect your home from potential fire hazards. Contact us today to schedule your service!"
   },
+  
   {
-    id: "ring-doorbell-install",
-    service: "Ring Doorbell Install",
-    price: "$140",
-    description: "Securely install your Ring doorbell so you can monitor your home’s front entry with ease.",
-    body: "A Ring doorbell is an excellent addition to your home security, but proper installation is key to getting the most out of its features. Coachella Valley Handyman provides expert installation of Ring doorbells, ensuring that they’re mounted securely and connected correctly to your home network. From the first knock to monitoring packages or visitors remotely, you’ll have peace of mind knowing your doorbell is installed by professionals. Let us take care of your smart home security setup with ease.",
-    heading: "Ring Doorbell Install: Keep an Eye on Your Home with Style!"
+    "id": "ring-doorbell-install",
+    "service": "Ring Doorbell Install",
+    "price": "$140",
+    "description": "Securely install your Ring doorbell so you can monitor your home’s front entry with ease.",
+    "keywords": ["Ring doorbell installation", "smart home security", "Ring doorbell setup", "Coachella Valley Handyman", "home monitoring"],
+    "heading": "Ring Doorbell Install: Keep an Eye on Your Home with Style!",
+    "body": "In today’s world, smart home security is becoming more important than ever, and a Ring doorbell is one of the best ways to monitor who’s at your front door, even when you’re not home. Whether you're keeping an eye on deliveries or ensuring the safety of your family, a properly installed Ring doorbell gives you that extra peace of mind. At Coachella Valley Handyman, we specialize in securely installing your Ring doorbell so it works seamlessly with your home’s setup, ensuring every feature is fully optimized from the start.\n\nInstalling a Ring doorbell might seem straightforward, but it requires more than just mounting the device. Our professional service ensures that the doorbell is securely attached to your home’s exterior, wired or connected properly to your Wi-Fi network, and positioned at the perfect angle for optimal video coverage. We take the hassle out of setup, so you don’t have to worry about poor connectivity or mounting mistakes.\n\nOnce installed, you’ll enjoy the full functionality of your smart doorbell, from live video feeds to motion alerts and two-way audio communication with visitors. With Coachella Valley Handyman, you’ll have confidence knowing that your doorbell is functioning at its best, providing you with constant visibility of your front door. Whether you're home or away, you’ll always know what's happening at your doorstep.\n\nA Ring doorbell not only adds security but also adds convenience to your daily life. It’s a small investment that makes a big difference in home safety. Let our expert team handle the installation process so you can focus on enjoying the benefits. At Coachella Valley Handyman, we go the extra mile to ensure that your Ring doorbell is installed correctly and discreetly, enhancing your home’s security without compromising its curb appeal. Contact us today to schedule your installation!"
   },
+  
   {
-    id: "solar-panel-cleaning",
-    service: "Solar Panel Cleaning",
-    price: "$150",
-    description: "Keep your solar panels clean and efficient with expert cleaning services that optimize performance.",
-    body: "Solar panels need regular cleaning to operate at peak efficiency. Dust, dirt, and debris can accumulate over time, reducing their effectiveness. Coachella Valley Handyman offers thorough cleaning services that remove buildup and keep your panels functioning at their best. Regular maintenance can extend the life of your solar system and help you maximize your energy savings. Let us handle the dirty work while you enjoy the benefits of a clean, energy-efficient home.",
-    heading: "Solar Panel Cleaning: Shine On, Sunshine!"
+    "id": "solar-panel-cleaning",
+    "service": "Solar Panel Cleaning",
+    "price": "$150",
+    "description": "Keep your solar panels clean and efficient with expert cleaning services that optimize performance.",
+    "keywords": ["solar panel cleaning", "solar efficiency", "solar maintenance", "clean energy", "Coachella Valley Handyman"],
+    "heading": "Solar Panel Cleaning: Shine On, Sunshine!",
+    "body": "As a homeowner who has invested in solar energy, you want to ensure that your system operates at its full potential. One of the easiest ways to maintain peak efficiency is by regularly cleaning your solar panels. Over time, panels can become covered with dust, dirt, bird droppings, and other debris, which reduces their ability to absorb sunlight and generate energy. This buildup can diminish your energy output and cost you money in lost savings. That's where Coachella Valley Handyman steps in.\n\nOur professional solar panel cleaning service removes grime and buildup without damaging the sensitive equipment, ensuring that your panels are spotless and functioning at maximum efficiency. We use eco-friendly cleaning techniques that are safe for both your panels and the environment, helping you maintain your commitment to clean energy. A clean solar panel system not only increases your energy output but also extends the life of your solar equipment, protecting your investment for the long term.\n\nMany homeowners overlook the importance of regular solar panel maintenance, but with Coachella Valley Handyman, you won’t have to. We recommend scheduling cleanings on a seasonal basis, especially in areas prone to dust storms, pollen, or bird activity. By keeping your panels clean, you can enjoy uninterrupted energy savings and do your part to reduce your carbon footprint.\n\nDon't let dirt and debris reduce the efficiency of your solar panels. With Coachella Valley Handyman’s expert cleaning service, you can be sure that your panels are always performing at their best, saving you money and helping you harness the power of the sun. Let us handle the dirty work so you can keep your home energy-efficient and eco-friendly. Contact us today to schedule your solar panel cleaning!"
   },
+  
   {
-    id: "power-washing-service",
-    service: "Power Washing Service",
-    price: "$150/h",
-    description: "Refresh your home’s exterior with power washing. Ideal for patios, driveways, and siding. Price based on an hour of labor.",
-    body: "Over time, dirt, mold, and grime can build up on your home’s exterior, leaving it looking worn and dingy. Our power washing service revitalizes your property by removing all that stubborn buildup. Perfect for driveways, patios, and siding, we use professional-grade equipment to clean surfaces without causing damage. Coachella Valley Handyman ensures your home looks fresh and inviting after just one session. It's an easy way to boost curb appeal and maintain the longevity of your outdoor spaces!",
-    heading: "Power Washing Service: Blast Away the Grime and Grit!"
+    "id": "power-washing-service",
+    "service": "Power Washing Service",
+    "price": "$150/h",
+    "description": "Refresh your home’s exterior with power washing. Ideal for patios, driveways, and siding. Price based on an hour of labor.",
+    "keywords": ["power washing", "pressure washing", "exterior cleaning", "patio cleaning", "driveway cleaning", "Coachella Valley Handyman"],
+    "heading": "Power Washing Service: Blast Away the Grime and Grit!",
+    "body": "The elements can take a toll on the exterior of your home, leaving behind layers of dirt, mold, and grime that are tough to clean with ordinary methods. Power washing offers an effective solution for restoring the beauty of your property by removing years of buildup in just a few hours. At Coachella Valley Handyman, we provide professional power washing services that are perfect for driveways, patios, sidewalks, siding, and more.\n\nUsing high-pressure water, we can remove stains, mildew, and other stubborn debris from a variety of surfaces, breathing new life into your home’s exterior. Whether you’re looking to improve curb appeal before selling your home or just want to maintain a clean, fresh look, power washing is the way to go. Our team is equipped with top-of-the-line tools that clean surfaces without causing damage, ensuring that your property is left spotless and intact.\n\nOne of the best things about power washing is its versatility. We can clean anything from concrete driveways to wooden decks, ensuring every inch of your property looks its best. Regular power washing also helps to maintain the integrity of your outdoor surfaces by preventing the buildup of harmful substances like mold, which can lead to long-term damage if left untreated. This not only saves you money in the long run but also extends the life of your outdoor spaces.\n\nAt Coachella Valley Handyman, we recommend power washing at least once a year to keep your property looking clean and well-maintained. It’s a quick and easy way to boost the appearance of your home, giving you a fresh, polished look without the need for costly renovations. Let us take care of the hard work—your home will shine after just one session! Reach out to us today to schedule your power washing service and enjoy a spotless, beautiful exterior."
   },
+  
   {
-    id: "outlet-switch-dimmer-install",
-    service: "Outlet/Switch/Dimmer Install",
-    price: "$80/unit",
-    description: "Install new outlets, switches, or dimmers to meet your electrical needs. Minimum of two units required.",
-    body: "Upgrading or adding new electrical outlets, switches, or dimmers can make your home more convenient and functional. Coachella Valley Handyman provides expert electrical installations, ensuring everything is safe, up to code, and works perfectly. Whether you’re adding outlets in hard-to-reach places or upgrading to dimmer switches for better lighting control, our team can handle the job with ease. We guarantee efficient service and clean results, with a minimum of two units required per installation.",
-    heading: "Outlet/Switch/Dimmer Install: Because You Deserve Power at Your Fingertips!"
+    "id": "outlet-switch-dimmer-install",
+    "service": "Outlet/Switch/Dimmer Install",
+    "price": "$80/unit",
+    "description": "Install new outlets, switches, or dimmers to meet your electrical needs. Minimum of two units required.",
+    "keywords": ["outlet installation", "switch installation", "dimmer installation", "electrical services", "Coachella Valley Handyman"],
+    "heading": "Outlet/Switch/Dimmer Install: Because You Deserve Power at Your Fingertips!",
+    "body": "In today's tech-driven world, having enough outlets and switches in the right places is essential for a modern home. Whether you need additional outlets for your new devices or want to install dimmer switches to create the perfect ambiance, Coachella Valley Handyman has you covered. Our outlet, switch, and dimmer installation services are designed to make your life more convenient, while ensuring that every installation meets the highest safety standards.\n\nOutlets, switches, and dimmers might seem like small additions, but they can make a huge difference in how you use your space. Imagine controlling the lighting in your living room with a dimmer, adjusting it to fit any mood, or finally having outlets where you need them most—no more struggling with extension cords! Our team can install new electrical fixtures exactly where you need them, making sure everything is done efficiently and up to code. Whether you're updating old switches or planning for a new home setup, we handle it all with professionalism and precision.\n\nWith Coachella Valley Handyman, you can trust that your electrical installations will be handled with care. We prioritize safety, ensuring that all wiring is done correctly and in compliance with local regulations. Our service doesn't stop at just installation—we also clean up afterward, leaving your home looking just as good as it did before we arrived, if not better! Our minimum requirement of two units per job ensures that we can give your home the attention it needs to be both functional and aesthetically pleasing.\n\nDon’t let old or insufficient outlets, switches, or dimmers hold your home back. Whether you're looking to modernize your lighting with dimmers or simply need more outlets in convenient locations, we're here to help. Coachella Valley Handyman offers reliable, affordable electrical services that put power at your fingertips, where and when you need it. Contact us today to schedule your installation!"
   },
+  
   {
-    id: "pressure-regulator-replacement",
-    service: "Pressure Regulator Replacement",
-    price: "$300+",
-    description: "Replace old or malfunctioning pressure regulators to keep your plumbing system safe. Labor only, parts not included.",
-    body: "A pressure regulator controls the water pressure in your home, ensuring your plumbing operates safely and efficiently. If your regulator is malfunctioning or outdated, it can lead to costly damage or leaks. Our pressure regulator replacement service keeps your plumbing system safe by swapping out old or damaged parts. Coachella Valley Handyman performs expert installations and ensures that everything works perfectly. Let us help maintain the integrity of your home’s plumbing!",
-    heading: "Pressure Regulator Replacement: Keeping Your Water Flowing Smoothly!"
+    "id": "pressure-regulator-replacement",
+    "service": "Pressure Regulator Replacement",
+    "price": "$300+",
+    "description": "Replace old or malfunctioning pressure regulators to keep your plumbing system safe. Labor only, parts not included.",
+    "keywords": ["pressure regulator replacement", "plumbing services", "water pressure control", "Coachella Valley Handyman", "home plumbing maintenance"],
+    "heading": "Pressure Regulator Replacement: Keeping Your Water Flowing Smoothly!",
+    "body": "Your home's pressure regulator is a crucial component that maintains the balance of water pressure in your plumbing system. If it's malfunctioning or has seen better days, your home could face a variety of issues—from unexpected leaks to burst pipes, or even damage to appliances. Coachella Valley Handyman offers expert pressure regulator replacement services that ensure your water pressure is controlled, stable, and safe for everyday use.\n\nA malfunctioning pressure regulator can cause long-term damage to your plumbing system, leading to expensive repairs. By replacing your outdated or faulty regulator, you’ll not only protect your home from potential water damage but also enhance the efficiency of your plumbing system. Whether your water pressure has become inconsistent, too low, or too high, our team will diagnose the problem and replace the faulty regulator with precision. We’ll ensure that everything works as it should, giving you peace of mind knowing your home is protected.\n\nAt Coachella Valley Handyman, we pride ourselves on offering high-quality, reliable plumbing services. Our pressure regulator replacement process involves careful inspection of your current system, expert removal of the old part, and flawless installation of the new regulator. We focus on safety, accuracy, and efficiency throughout the process, making sure that your home’s water pressure is perfectly balanced before we leave. With us, you can expect professional service that minimizes downtime and restores your plumbing to optimal condition.\n\nWater pressure that's too high can wreak havoc on your pipes, appliances, and fixtures, while pressure that's too low can make daily activities frustrating. Don't wait for small issues to turn into big problems. Whether you're already experiencing plumbing issues or just want to prevent future damage, our team is here to help. Coachella Valley Handyman provides the expertise and reliability you need to keep your water flowing smoothly and your home safe from pressure-related problems. Contact us today to schedule your pressure regulator replacement!"
   },
+  
   {
-    id: "led-retrofit-lighting",
-    service: "LED Retrofit Lighting",
-    price: "$25/unit",
-    description: "Upgrade to energy-efficient LED retrofit lighting. Minimum of five units required.",
-    body: "Switching to LED retrofit lighting is an excellent way to reduce energy consumption and brighten your home with modern, efficient bulbs. This installation is ideal for homeowners looking to improve lighting quality while cutting energy costs. Coachella Valley Handyman provides expert installation to ensure your new lighting system works flawlessly, enhancing both aesthetics and functionality. Whether you're retrofitting an entire home or a few key spaces, we’ll make the upgrade seamless. A minimum of five units is required for installation.",
-    heading: "LED Retrofit Lighting: Brighten Up Your Space and Save on Bills!"
+    "id": "led-retrofit-lighting",
+    "service": "LED Retrofit Lighting",
+    "price": "$25/unit",
+    "description": "Upgrade to energy-efficient LED retrofit lighting. Minimum of five units required.",
+    "keywords": ["LED retrofit lighting", "energy-efficient lighting", "Coachella Valley Handyman", "lighting installation", "reduce energy bills"],
+    "heading": "LED Retrofit Lighting: Brighten Up Your Space and Save on Bills!",
+    "body": "Upgrading to LED retrofit lighting is one of the smartest home improvements you can make. Not only do LED lights last longer, but they also use a fraction of the energy consumed by traditional bulbs. Coachella Valley Handyman offers professional LED retrofit installation, transforming your home with modern lighting solutions that reduce your carbon footprint and save you money on energy bills. Our expert technicians will ensure each unit is installed perfectly, giving your home a bright, contemporary look.\n\nLED lighting isn’t just about saving money—it’s about improving the quality of light in your home. Whether you're replacing outdated fixtures in your kitchen, living room, or office, or upgrading recessed lighting throughout your entire home, we ensure a seamless transition. LED retrofitting is ideal for enhancing brightness, color accuracy, and overall ambiance, providing you with a more energy-efficient and visually appealing environment.\n\nAt Coachella Valley Handyman, we specialize in installing LED retrofit lights that blend functionality with style. From selecting the right fixtures to installing them with care, we handle every step with precision. By upgrading to LED, you’re not only cutting down on energy consumption but also reducing the need for frequent bulb replacements—LED lights can last up to 25 times longer than traditional incandescent bulbs!\n\nOur team works efficiently to retrofit your lighting with minimal disruption to your daily routine. Whether you're upgrading a few rooms or your entire house, we ensure your lighting system operates at peak performance. The benefits of LED retrofitting are immediate: you'll notice a brighter, cleaner light that makes your home feel refreshed and modern, while also seeing the savings on your energy bill. Let Coachella Valley Handyman help you make the switch to LED lighting today and enjoy a brighter, more sustainable home."
   },
+  
   {
-    id: "hard-wired-led-lighting",
-    service: "Hard Wired LED Retrofit Lighting",
-    price: "$120/unit",
-    description: "Install hardwired LED lighting to brighten up your home with energy efficiency. Minimum of two units required.",
-    body: "Hard-wired LED retrofit lighting provides a permanent and energy-efficient solution to illuminate your home beautifully. At Coachella Valley Handyman, we handle all aspects of the installation, from wiring to fixture mounting, ensuring a safe and efficient setup. With years of experience, we make the switch to LED lighting hassle-free, giving you the energy savings and modern lighting you deserve. Whether you want to illuminate your kitchen, living room, or outdoor space, we'll make sure everything is installed with precision and care.",
-    heading: "Hard Wired LED Lighting: Shine Bright Like a Diamond!"
+    "id": "hard-wired-led-lighting",
+    "service": "Hard Wired LED Retrofit Lighting",
+    "price": "$120/unit",
+    "description": "Install hardwired LED lighting to brighten up your home with energy efficiency. Minimum of two units required.",
+    "keywords": ["hard wired LED lighting", "LED retrofit", "Coachella Valley Handyman", "energy-efficient lighting", "LED installation", "home lighting upgrade"],
+    "heading": "Hard Wired LED Lighting: Shine Bright Like a Diamond!",
+    "body": "Hard-wired LED retrofit lighting is the perfect solution for homeowners looking to make a lasting improvement in their home's energy efficiency and aesthetic appeal. LED lights are not only environmentally friendly but also provide superior brightness, longevity, and cost savings over traditional lighting options. At Coachella Valley Handyman, we specialize in the professional installation of hard-wired LED lighting, transforming your home with permanent lighting solutions that last for years to come.\n\nOur expert team handles the entire process, from running electrical wiring to mounting the fixtures securely, ensuring that everything is installed safely and efficiently. Whether you're upgrading your kitchen, living room, or outdoor spaces, we’ll help you select the right fixtures for your needs, ensuring they complement your home's style while providing the brightness and energy savings you expect from modern LED technology.\n\nSwitching to hard-wired LED lighting doesn’t just reduce your energy consumption; it enhances the quality of lighting in your home. You’ll experience brighter, clearer light that highlights every corner of your room while saving significantly on your energy bills. LED lights can last up to 25 times longer than traditional bulbs, meaning fewer replacements and lower maintenance costs. Plus, with their modern, sleek design, hard-wired LEDs add a touch of sophistication to any space.\n\nCoachella Valley Handyman ensures a smooth installation process from start to finish. We take care of all the technical details, so you can sit back and enjoy the benefits of energy-efficient lighting. With our professional installation, you'll experience the difference immediately: brighter rooms, lower utility bills, and a more sustainable lighting solution for your home. Let us light up your life with hard-wired LED retrofit lighting, customized for your unique home setup!"
   },
+  
   {
-    id: "pendant-lighting-standard",
-    service: "Pendant Lighting Install or Chandelier (Standard Ceiling)",
-    price: "$140",
-    description: "Install pendant lights or chandeliers for ceilings up to 8 feet, adding style to your space.",
-    body: "Looking to elevate your space with new pendant lighting or a chandelier? Coachella Valley Handyman specializes in the installation of elegant lighting fixtures for standard ceiling heights up to 8 feet. Whether you’re seeking to create ambiance or make a bold statement, our team ensures a secure and flawless installation. We’ll handle all the wiring and mounting, so your new lighting fixture is not only beautiful but functional. Let us help brighten your home in style, without the hassle of DIY.",
-    heading: "Pendant Lighting Install: Brighten Your Home, One Fixture at a Time!"
+    "id": "pendant-lighting-standard",
+    "service": "Pendant Lighting Install or Chandelier (Standard Ceiling)",
+    "price": "$140",
+    "description": "Install pendant lights or chandeliers for ceilings up to 8 feet, adding style to your space.",
+    "keywords": ["pendant lighting", "chandelier installation", "lighting fixtures", "Coachella Valley Handyman", "lighting installation", "standard ceiling lights"],
+    "heading": "Pendant Lighting Install: Brighten Your Home, One Fixture at a Time!",
+    "body": "Elevating the look of your home with pendant lighting or a chandelier is an easy way to add both style and function. Whether you're going for a modern, minimalist look or something more ornate and luxurious, Coachella Valley Handyman has the expertise to install lighting fixtures that suit your aesthetic perfectly. For ceilings up to 8 feet high, we ensure a seamless installation process, providing both beauty and safety in every project.\n\nPendant lighting is not just about illumination; it's about creating a focal point in any room. Our team will help you select the ideal placement to make the most of your new lighting fixture, whether it’s over a kitchen island, dining table, or as a statement piece in your living room. From wiring to secure mounting, our experts ensure that everything is done with precision and care, leaving your room looking polished and stylish.\n\nIf chandeliers are more your style, we’ve got you covered! Installing a chandelier can transform your space from ordinary to extraordinary, offering both practical lighting and eye-catching design. At Coachella Valley Handyman, we focus on the details, making sure that your chandelier is hung at the perfect height and securely installed for long-lasting performance. We take the hassle out of complex wiring and heavy lifting, so you can enjoy your new chandelier with confidence.\n\nOur professional installation guarantees that your pendant lights or chandelier will not only look stunning but also function perfectly. We work efficiently and safely, minimizing any disruption to your daily life. Plus, with our commitment to quality, you can trust that your new lighting fixtures will last for years to come, enhancing the beauty and value of your home.\n\nCoachella Valley Handyman makes lighting installation easy, giving you more time to enjoy your updated space. Let us take care of the hard work so you can focus on the final reveal—a home that’s brighter, more stylish, and completely transformed by the perfect lighting fixtures!"
   },
+  
   {
-    id: "pendant-lighting-high-ceiling",
-    service: "Pendant Lighting Install or High Ceiling Chandelier",
-    price: "$150+",
-    description: "Install lighting for high ceilings. Ladder or scaffolding may be required. Pricing ranges based on ceiling height and job complexity.",
-    body: "Installing lighting on high ceilings can be tricky, but Coachella Valley Handyman is here to make the process easy. Whether you’re looking to install a grand chandelier or modern pendant lighting in spaces with tall ceilings, we bring the right tools and expertise. With options for ladder or scaffolding work, we ensure a safe and professional installation that enhances your home’s aesthetic. Trust our experienced team to get the job done efficiently, leaving you with beautifully lit rooms, no matter the ceiling height.",
-    heading: "Pendant Lighting for High Ceilings: Let Us Reach New Heights!"
+    "id": "pendant-lighting-high-ceiling",
+    "service": "Pendant Lighting Install or High Ceiling Chandelier",
+    "price": "$150+",
+    "description": "Install lighting for high ceilings. Ladder or scaffolding may be required. Pricing ranges based on ceiling height and job complexity.",
+    "keywords": ["high ceiling lighting", "chandelier installation", "pendant lighting", "Coachella Valley Handyman", "lighting installation", "tall ceiling lighting"],
+    "heading": "Pendant Lighting for High Ceilings: Let Us Reach New Heights!",
+    "body": "High ceilings make a dramatic statement in any home, but installing lighting at these heights can be challenging. Whether you're aiming to showcase a beautiful chandelier or install modern pendant lighting, Coachella Valley Handyman has the expertise to handle even the tallest of ceilings. Our team is equipped with the right tools, including ladders and scaffolding, to safely and efficiently install your lighting fixtures without damaging your home.\n\nWorking with high ceilings requires precision and care, and we take pride in our attention to detail. We ensure that each fixture is hung at the correct height to complement your room’s proportions, while also optimizing the light distribution for both functionality and ambiance. Whether it’s a chandelier in a grand entryway or pendant lights over a kitchen island, we bring your vision to life, enhancing your home’s style and elegance.\n\nOur process starts with a thorough assessment of the space, taking into consideration the ceiling height, the type of fixture, and any special installation requirements. From there, we handle all aspects of the job, including electrical wiring, secure mounting, and even post-installation adjustments to ensure that your lighting is perfect. No detail is too small, and we work to ensure that your high ceiling lighting not only looks stunning but also functions flawlessly for years to come.\n\nCoachella Valley Handyman understands that installing lighting in hard-to-reach places can be daunting for homeowners, but with our professional team on your side, you can rest easy knowing that safety and quality are our top priorities. Whether you're updating an existing fixture or adding new lighting to your home, we have the skills and experience to get the job done right, even in the most challenging spaces.\n\nTrust Coachella Valley Handyman to install your high ceiling lighting with the care and expertise needed to make your home shine. From elegant chandeliers to sleek pendant lights, we’ll ensure that your lighting installation elevates your space and leaves a lasting impression."
   },
+  
   {
-    id: "bathroom-exhaust-fan-install",
-    service: "Bathroom Exhaust Fan Install",
-    price: "$155",
-    description: "Quickly and efficiently install a new bathroom exhaust fan to keep your bathroom ventilated.",
-    body: "A properly installed bathroom exhaust fan is key to preventing mold and maintaining air quality in your home. Coachella Valley Handyman provides professional installation services that ensure optimal ventilation in your bathroom. Whether you're replacing an outdated fan or installing a brand new one, we handle the wiring and installation with precision. In no time, your bathroom will be properly ventilated, keeping moisture under control and helping to preserve the overall condition of your home.",
-    heading: "Bathroom Exhaust Fan Install: Breathe Easy with Fresh Air!"
+    "id": "bathroom-exhaust-fan-install",
+    "service": "Bathroom Exhaust Fan Install",
+    "price": "$155",
+    "description": "Quickly and efficiently install a new bathroom exhaust fan to keep your bathroom ventilated.",
+    "keywords": ["bathroom exhaust fan", "ventilation", "bathroom fan install", "mold prevention", "Coachella Valley Handyman", "home air quality"],
+    "heading": "Bathroom Exhaust Fan Install: Breathe Easy with Fresh Air!",
+    "body": "A well-ventilated bathroom is essential for keeping moisture levels under control and preventing mold and mildew from forming. Without proper ventilation, excess humidity can lead to long-term damage to walls, ceilings, and fixtures, not to mention unpleasant odors and a decline in air quality. Coachella Valley Handyman offers expert bathroom exhaust fan installation to ensure your bathroom stays fresh, dry, and free of harmful moisture buildup.\n\nOur installation service begins with assessing your bathroom’s layout and ventilation needs. Whether you're installing a brand new exhaust fan or replacing an old, inefficient model, we handle the process with care and precision. We take care of everything from wiring and mounting to ensuring that your fan operates at peak performance. With our team on the job, you can trust that your bathroom will benefit from improved airflow and moisture control.\n\nInstalling a bathroom exhaust fan is more than just a comfort feature—it's a preventive measure that protects your home from costly moisture damage. Coachella Valley Handyman understands the importance of proper ventilation, and we make sure your fan is installed in the best location to maximize efficiency and effectiveness. From choosing the right fan size to expertly securing the unit, we deliver high-quality results that last.\n\nOur team also takes into account any special considerations, such as noise level, energy efficiency, and airflow capacity, to ensure that your new fan meets your specific needs. We pride ourselves on delivering fast, efficient service with minimal disruption to your daily routine, so you can enjoy a well-ventilated bathroom in no time.\n\nTrust Coachella Valley Handyman for all your bathroom ventilation needs. With our professional exhaust fan installation, you'll breathe easier knowing that your bathroom is well-ventilated and protected from the damaging effects of excess moisture. Contact us today to schedule your installation and keep your bathroom fresh and mold-free."
   },
+  
   {
-    id: "exterior-lighting",
-    service: "Exterior Lighting",
-    price: "$140",
-    description: "Install exterior lighting to enhance security and curb appeal around your home.",
-    body: "Exterior lighting does more than just illuminate your property—it adds security and curb appeal as well. Coachella Valley Handyman offers expert installation of exterior lights, making your home safer and more inviting. Whether it’s installing pathway lights, motion detectors, or decorative lighting around your patio, we ensure everything is wired correctly and positioned perfectly. With our help, you can transform your outdoor spaces into well-lit, secure areas that boost your home's appearance and functionality.",
-    heading: "Exterior Lighting: Light Up the Night and Keep the Bad Guys Out!"
+    "id": "exterior-lighting",
+    "service": "Exterior Lighting",
+    "price": "$140",
+    "description": "Install exterior lighting to enhance security and curb appeal around your home.",
+    "keywords": ["exterior lighting", "outdoor lighting install", "security lighting", "curb appeal", "Coachella Valley Handyman", "pathway lights", "motion detectors", "decorative lighting"],
+    "heading": "Exterior Lighting: Light Up the Night and Keep the Bad Guys Out!",
+    "body": "Well-designed exterior lighting does more than just add a glow to your outdoor spaces—it plays a crucial role in home security and curb appeal. Whether you're looking to create a welcoming ambiance for guests or boost safety with security lights, Coachella Valley Handyman has you covered. Our expert exterior lighting installation services ensure your property is both well-lit and beautifully enhanced.\n\nOutdoor lighting is one of the simplest yet most effective ways to transform your home’s appearance after dark. From pathway lights that guide visitors safely to your front door, to accent lighting that highlights architectural features, our team handles every step of the process with precision. We offer a range of lighting options, including energy-efficient LED solutions, that can make your home shine while keeping electricity costs low.\n\nBeyond aesthetics, outdoor lighting plays a vital role in deterring unwanted visitors and enhancing the security of your property. Motion sensor lights can act as a first line of defense, illuminating shadowy areas when someone approaches. By installing these strategically, you can keep your home and family safer at night. With Coachella Valley Handyman, we ensure that all lighting fixtures are securely installed and properly connected to your home’s electrical system, so you don’t have to worry about functionality or safety issues.\n\nWhether it’s spotlighting your landscaping, illuminating a patio for evening gatherings, or installing floodlights for enhanced security, we approach each project with an eye for detail. We take into account your specific lighting goals and design preferences, and we make sure that every light fixture is placed perfectly to achieve the desired effect.\n\nAt Coachella Valley Handyman, our exterior lighting installations not only brighten up your home but also add lasting value to your property. A well-lit exterior boosts curb appeal, increases safety, and creates a welcoming atmosphere for you and your guests. Trust us to light up your home with style and efficiency. Contact us today to discuss your exterior lighting needs and discover how we can enhance the look and security of your outdoor spaces!"
   },
+  
   {
-    id: "gfci-install",
-    service: "GFCI Install",
-    price: "$90/unit",
-    description: "Install GFCI outlets to protect your home from electrical shocks. Minimum of two units required. Parts not included.",
-    body: "Ground Fault Circuit Interrupter (GFCI) outlets are essential for protecting your home from electrical shocks, particularly in moisture-prone areas like bathrooms and kitchens. Coachella Valley Handyman will professionally install GFCI outlets, ensuring your home meets safety standards. With a minimum of two units required, our service is ideal for those upgrading older outlets to modern, safer alternatives. Keep your family safe from electrical hazards with a quick, efficient installation from our experienced team.",
-    heading: "GFCI Install: Keeping Your Home Shock-Free!"
+    "id": "gfci-install",
+    "service": "GFCI Install",
+    "price": "$90/unit",
+    "description": "Install GFCI outlets to protect your home from electrical shocks. Minimum of two units required. Parts not included.",
+    "keywords": ["GFCI install", "GFCI outlet installation", "electrical safety", "shock prevention", "Coachella Valley Handyman", "bathroom outlet safety", "kitchen electrical safety", "modern outlet upgrade"],
+    "heading": "GFCI Install: Keeping Your Home Shock-Free!",
+    "body": "Ground Fault Circuit Interrupter (GFCI) outlets are a critical safety feature in any modern home. They are specifically designed to protect you from electrical shocks by automatically shutting off power when a ground fault is detected. This is particularly important in areas where water and electricity are close, like kitchens, bathrooms, garages, and outdoor spaces. At Coachella Valley Handyman, we specialize in installing GFCI outlets to keep your home compliant with current electrical codes and ensure your family’s safety.\n\nIf you have older outlets, especially in moisture-prone areas, upgrading to GFCI outlets is a must. These devices reduce the risk of electrical shock by detecting any imbalances in the electrical current and shutting off the circuit before harm can occur. It’s a small investment that can make a huge difference in the safety of your home. Whether you need just two units installed or are upgrading outlets throughout your property, Coachella Valley Handyman handles the job quickly and efficiently.\n\nOur experienced technicians take every precaution to ensure that your GFCI outlets are installed properly and function exactly as they should. We test each unit to make sure it operates correctly before we leave, giving you peace of mind that your home is protected. GFCI outlets are not only essential in homes but also required by electrical code in areas with higher exposure to moisture. Trust our expert team to install these outlets correctly, reducing the risk of electrical accidents.\n\nIn addition to safety, upgrading to GFCI outlets can help prevent damage to your home’s electrical system. If a ground fault occurs without a GFCI outlet, it could cause a circuit overload or even an electrical fire. By installing GFCI outlets, you're adding a vital layer of protection that safeguards your home from such risks. Whether you're updating your entire house or just the high-risk areas, Coachella Valley Handyman will provide professional and timely service, ensuring everything is done to the highest standards.\n\nWith our GFCI installation services, you can feel confident knowing that your home is safer and more compliant with modern electrical standards. At Coachella Valley Handyman, we pride ourselves on delivering top-notch service and reliable solutions for all your electrical needs. Contact us today to schedule your GFCI installation and experience peace of mind knowing your home is protected from electrical hazards."
   },
+  
   {
-    id: "mixer-valve-install",
-    service: "Mixer Valve",
-    price: "$500+",
-    description: "Professional installation of mixer valves for your shower or bathtub. Pricing starts at $500. Parts not included.",
-    body: "A mixer valve is an essential component in balancing hot and cold water for your shower or bathtub. If your valve needs to be replaced or upgraded, Coachella Valley Handyman can take care of the entire installation process. We ensure the valve is installed properly to avoid temperature fluctuations and keep your bathroom plumbing running smoothly. Whether you’re renovating your bathroom or dealing with a faulty valve, our team provides expert service that guarantees comfort and safety.",
-    heading: "Mixer Valve Installation: For the Perfect Shower Experience!"
+    "id": "mixer-valve-install",
+    "service": "Mixer Valve",
+    "price": "$500+",
+    "description": "Professional installation of mixer valves for your shower or bathtub. Pricing starts at $500. Parts not included.",
+    "keywords": ["mixer valve install", "shower valve installation", "bathtub valve installation", "plumbing service", "bathroom renovation", "Coachella Valley Handyman", "water temperature control", "shower plumbing"],
+    "heading": "Mixer Valve Installation: For the Perfect Shower Experience!",
+    "body": "Your shower or bathtub experience relies heavily on the performance of your mixer valve, the unsung hero behind balancing hot and cold water. If your current mixer valve isn’t doing the job right, you might find yourself caught between uncomfortable temperature extremes—or worse, dealing with a faulty valve that risks damaging your plumbing system. At Coachella Valley Handyman, we specialize in installing mixer valves with precision and care, ensuring that your water temperature remains consistent and safe.\n\nWhether you're upgrading your bathroom fixtures during a renovation or replacing an outdated valve, proper installation is key to maintaining a smooth and comfortable showering experience. A well-installed mixer valve ensures that your water temperature stays steady, even when someone flushes a toilet or uses another faucet in the house. Our experienced team knows exactly how to install mixer valves that function flawlessly, providing you with the comfort and peace of mind you deserve.\n\nIf you've noticed temperature spikes or uneven water pressure during your showers, it might be time to replace your mixer valve. Coachella Valley Handyman is here to take the stress out of the process, handling everything from sourcing the right valve for your system to completing the installation with minimal disruption to your daily routine. We also ensure that all connections are watertight and compliant with plumbing standards, preventing potential leaks and water damage down the road.\n\nIn addition to providing a more enjoyable shower or bath, a new mixer valve can improve the overall efficiency of your plumbing system. If your current valve is worn out or malfunctioning, it can place unnecessary strain on your water heater and plumbing pipes. By upgrading to a high-quality valve installed by the professionals at Coachella Valley Handyman, you can reduce wear and tear on your system and avoid costly repairs in the future.\n\nDon’t settle for a subpar shower experience! Let Coachella Valley Handyman install your new mixer valve and make sure it’s done right the first time. Whether you’re planning a bathroom renovation or simply need a quick replacement, we deliver expert service that guarantees your home’s plumbing runs smoothly and reliably. Contact us today to schedule your mixer valve installation, and start enjoying a perfectly balanced shower every day."
   },
+  
   {
-    id: "garage-storage-racks",
-    service: "Garage Storage Racks",
-    price: "$500+",
-    description: "Install overhead garage storage racks to maximize space. Pricing varies by rack size. Rack not included.",
-    body: "Maximizing space in your garage is easy with overhead storage racks, and Coachella Valley Handyman is here to install them safely and securely. Whether you need additional space for seasonal items or simply want to declutter, our team ensures your storage racks are installed with precision. We’ll take care of mounting and positioning to ensure they can hold the weight of your belongings, giving you a functional and organized garage in no time. Pricing varies depending on the rack size and installation complexity.",
-    heading: "Garage Storage Racks: Turning Clutter into Space!"
+    "id": "garage-storage-racks",
+    "service": "Garage Storage Racks",
+    "price": "$500+",
+    "description": "Install overhead garage storage racks to maximize space. Pricing varies by rack size. Rack not included.",
+    "keywords": ["garage storage racks", "overhead storage installation", "garage organization", "garage shelving", "Coachella Valley Handyman", "maximize garage space", "garage decluttering", "heavy-duty storage"],
+    "heading": "Garage Storage Racks: Turning Clutter into Space!",
+    "body": "Tired of tripping over boxes and struggling to find space in your garage? Overhead storage racks are the perfect solution for transforming that cluttered area into an organized and functional space. Coachella Valley Handyman specializes in installing heavy-duty garage storage racks, helping you make the most of your garage’s vertical space. Whether you need extra room for seasonal decorations, sports equipment, or tools, our storage rack installation service ensures your items are stored safely and efficiently.\n\nOur team will assess your garage layout and install the racks securely, making sure they’re mounted properly to handle the weight of your belongings. We take care of the details, from selecting the optimal placement for accessibility to ensuring that the installation is strong and durable. By choosing Coachella Valley Handyman, you can trust that your garage storage solution will not only be functional but also safe, allowing you to store bulky or heavy items with ease.\n\nHaving a clutter-free garage doesn’t just make it easier to find your tools or equipment—it can also create additional space for your car or workspace. Our overhead storage rack installation provides the perfect way to reclaim valuable floor space without having to part with your belongings. With our expertise, you can optimize your garage’s potential while keeping everything neatly stored and organized.\n\nNo matter the size of your garage or the complexity of the installation, Coachella Valley Handyman is equipped to handle the job. We tailor each installation to meet your specific needs, whether you're looking for a basic setup or a more customized solution. Pricing varies based on the size and type of racks you choose, and we’ll provide a full consultation to ensure the finished project meets your expectations.\n\nStop wasting time searching through piles of boxes or struggling to park your car in a cramped garage. Let Coachella Valley Handyman install your new overhead storage racks, turning your garage into a clean, organized, and efficient space. Contact us today to schedule your installation and experience the benefits of a decluttered garage!"
   },
+  
   {
-    id: "plug-add-on",
-    service: "Plug Add-On",
-    price: "$300+",
-    description: "Add new electrical plugs. Pricing starts at $300 and may vary based on complexity. Parts not included.",
-    body: "Need an extra outlet in a hard-to-reach area? Coachella Valley Handyman offers professional plug add-on services to help you power your devices in any room of your home. We handle everything from the wiring to the installation, ensuring the new outlet is safe and up to code. Whether you’re adding plugs for convenience or to accommodate new appliances, our team provides clean, efficient work that meets your needs. Pricing starts at $300 and may vary based on the complexity of the job.",
-    heading: "Plug Add-On: Power Up Your Space!"
+    "id": "plug-add-on",
+    "service": "Plug Add-On",
+    "price": "$300+",
+    "description": "Add new electrical plugs. Pricing starts at $300 and may vary based on complexity. Parts not included.",
+    "keywords": ["plug add-on", "electrical outlet installation", "new plug installation", "home electrical service", "Coachella Valley Handyman", "power outlets", "electrical upgrade", "electrical plugs"],
+    "heading": "Plug Add-On: Power Up Your Space!",
+    "body": "Is your home lacking enough electrical outlets for all your modern devices? Whether it’s a new home office setup, a media room, or simply adding outlets to better suit your lifestyle, Coachella Valley Handyman is here to help with our expert plug add-on services. We specialize in safely and efficiently installing new electrical outlets to meet your power needs, ensuring your home stays up to code while making everyday life more convenient.\n\nOur professional team handles the entire process, from determining the optimal location for the new outlet to performing the wiring and installation. We make sure the new plug is installed seamlessly, leaving no mess behind and ensuring that it blends in perfectly with your existing space. Whether you need an extra plug in your kitchen for new appliances or in your living room to support entertainment systems, we’ve got you covered.\n\nAdding plugs in the right places can dramatically improve the functionality of your home. If you’re tired of relying on extension cords or limited outlet access, a plug add-on is the perfect solution. Coachella Valley Handyman provides expert service that gives you the freedom to use your devices where you want them, without sacrificing safety or aesthetics.\n\nPricing for plug add-ons starts at $300, with final costs depending on the complexity of the job, such as additional wiring or working in hard-to-reach areas. We’ll walk you through every step of the process, providing a full consultation to ensure the installation meets your specific needs. Trust Coachella Valley Handyman to deliver a clean, efficient installation, giving you the power you need exactly where you need it.\n\nMaximize the convenience and functionality of your home with a professional plug add-on from Coachella Valley Handyman. Contact us today to schedule your installation and power up your space with confidence!"
   },
+  
   {
-    id: "door-casing",
-    service: "Door Casing",
-    price: "$270+",
-    description: "Replace door casing and frame for a fresh look. Parts not included.",
-    body: "Updating your door casing can refresh the look of an entire room, and Coachella Valley Handyman is here to help. Our door casing replacement service includes precise measurement, cutting, and installation to give your doors a sleek, finished look. Whether your current casings are worn or you’re simply looking for an upgrade, we ensure professional results that enhance your home’s interior. This service not only improves aesthetics but also provides better insulation and durability around your doors.",
-    heading: "Door Casing: The Frame That Changes Everything!"
+    "id": "door-casing",
+    "service": "Door Casing",
+    "price": "$270+",
+    "description": "Replace door casing and frame for a fresh look. Parts not included.",
+    "keywords": ["door casing replacement", "door frame upgrade", "home improvement", "interior design", "door trim installation", "Coachella Valley Handyman", "door frame repair", "home renovation"],
+    "heading": "Door Casing: The Frame That Changes Everything!",
+    "body": "A door’s casing is more than just a frame—it’s a detail that can dramatically improve the look and feel of your home. Whether you’re replacing old, worn-out casings or looking to enhance your home’s interior with a more modern style, Coachella Valley Handyman provides expert door casing replacement services to suit your needs. Our precise installation ensures your door frames are both functional and aesthetically pleasing, creating a seamless transition between rooms.\n\nOur door casing service includes taking careful measurements, cutting the new trim to fit, and installing it with exact precision. We make sure the fit is snug, the joints are tight, and everything looks perfect from every angle. The end result? A clean, polished finish that enhances your home’s overall appearance. Whether it’s for a single door or multiple throughout your home, we handle each project with care and expertise.\n\nIn addition to improving aesthetics, new door casing also contributes to better insulation and durability. Properly installed casing helps seal your doors, keeping out drafts and ensuring the structural integrity of the frame. This means your home becomes not only more visually appealing but also more energy-efficient and long-lasting. Whether you’re upgrading to decorative trim or simply replacing damaged casings, we offer a wide variety of styles and materials to choose from.\n\nOur team at Coachella Valley Handyman ensures a hassle-free experience from start to finish. We’ll consult with you on design options, handle all the cutting and installation, and leave your home looking better than ever. With pricing starting at $270 and varying depending on the size and complexity of the job, we provide high-quality craftsmanship that you can trust. Refresh your home’s look and add value with expertly installed door casings.\n\nReady to give your doors the attention they deserve? Contact Coachella Valley Handyman today to schedule your door casing installation. It’s a simple update that makes a world of difference!"
   },
+  
   {
-    id: "keypad-lock-install",
-    service: "Keypad Lock Service/Install",
-    price: "$155",
-    description: "Install or service keypad locks for added security and convenience.",
-    body: "Keypad locks offer a secure, convenient way to access your home, and Coachella Valley Handyman is here to install or service these locks for you. Whether you’re upgrading your home security or replacing an outdated system, we ensure proper installation for peace of mind. With keypad locks, you’ll never have to worry about lost keys again—simply punch in a code and you’re good to go. Our professional service ensures everything works flawlessly, enhancing your home’s security and convenience.",
-    heading: "Keypad Lock Service: Unlocking Security at Your Fingertips!"
+    "id": "keypad-lock-install",
+    "service": "Keypad Lock Service/Install",
+    "price": "$155",
+    "description": "Install or service keypad locks for added security and convenience.",
+    "keywords": ["keypad lock installation", "keyless entry service", "home security", "locksmith services", "Coachella Valley Handyman", "electronic lock installation", "keypad door lock", "home automation"],
+    "heading": "Keypad Lock Service: Unlocking Security at Your Fingertips!",
+    "body": "Keypad locks bring a new level of security and convenience to your home. With the ability to unlock your door using a personalized code, you can say goodbye to the hassle of carrying keys or worrying about losing them. Coachella Valley Handyman offers expert keypad lock installation and service, ensuring that your home remains secure and that you have easy access, whether you're upgrading your current lock system or installing one for the first time.\n\nOur installation process is quick and precise, and we handle all types of keypad locks, from basic models to advanced smart locks that integrate with your home’s security system. We ensure that the lock is installed correctly, aligned perfectly, and functions smoothly, providing you with confidence in your home’s security. We’ll also take the time to explain how to set up and manage your keypad lock system, ensuring that you feel comfortable and in control of your home’s access points.\n\nKeypad locks are not just about convenience—they are a major security upgrade. They eliminate the need for spare keys under the mat, reduce the risk of lock picking, and allow you to easily manage who has access to your home. If you rent out your property or frequently have visitors, keypad locks make it simple to change codes without the need for rekeying or changing physical locks. Plus, many models now come with features such as temporary access codes, activity tracking, and remote locking and unlocking via smartphone apps.\n\nOur team at Coachella Valley Handyman also provides servicing for existing keypad locks. Whether you’re having trouble with your current system or just need a routine check-up, we’ll troubleshoot any issues and ensure everything is working perfectly. We are committed to providing top-quality workmanship with every service, so you can enjoy the convenience and security that a keypad lock brings.\n\nWith pricing starting at $155, our keypad lock installation and servicing offers a cost-effective way to upgrade your home security. Trust Coachella Valley Handyman to get the job done right. Contact us today to schedule your keypad lock service and start enjoying a new level of security and convenience!"
   },
+  
   {
-    id: "painting-inspection",
-    service: "Painting (Inspection Required)",
-    price: "$270",
-    description: "Full painting services available. Price determined after a site inspection to assess the scope of work.",
-    body: "Painting is one of the most transformative home improvement services you can invest in, and Coachella Valley Handyman offers full-service painting solutions tailored to your needs. Whether you're looking to refresh a single room or repaint your entire home, we handle everything from prep to cleanup. After an initial site inspection, we'll provide you with a custom quote based on the scope of work. From color selection to the final brush stroke, we ensure your space looks vibrant and new, with a flawless finish every time.",
-    heading: "Painting: Transform Your Space with a Splash of Color!"
+    "id": "painting-inspection",
+    "service": "Painting (Inspection Required)",
+    "price": "$270",
+    "description": "Full painting services available. Price determined after a site inspection to assess the scope of work.",
+    "keywords": ["painting services", "home painting", "interior painting", "exterior painting", "custom painting", "site inspection", "Coachella Valley Handyman", "residential painting", "wall painting", "professional painting"],
+    "heading": "Painting: Transform Your Space with a Splash of Color!",
+    "body": "Few things can change the look and feel of your home as dramatically as a fresh coat of paint. Whether you're aiming for a bold new look or simply freshening up a tired room, Coachella Valley Handyman offers professional painting services that will transform your space. Our comprehensive painting solutions include both interior and exterior work, ensuring your home looks its best, inside and out.\n\nWe begin every painting project with a thorough site inspection. This allows us to assess the condition of the surfaces, identify any potential repairs, and understand the scope of work involved. From this inspection, we'll provide you with a customized quote that reflects the size of the job, the materials required, and any necessary prep work. This ensures that there are no surprises, and you know exactly what to expect from start to finish.\n\nOur team handles every detail of the painting process, from moving furniture and protecting surfaces to priming, painting, and clean-up. We use high-quality paints that offer rich color and durability, so your walls will stay vibrant for years to come. If you're unsure of what colors or finishes to choose, we can provide expert advice and color matching services to ensure your vision comes to life.\n\nAt Coachella Valley Handyman, we pride ourselves on delivering flawless results. We carefully prepare surfaces, filling any cracks or holes, sanding uneven areas, and ensuring that your walls are ready for a smooth, even coat. Our precise, professional brushwork and attention to detail mean that you'll have a polished, high-quality finish that enhances the beauty of your home.\n\nWhether you're painting a single room, updating your home's exterior, or tackling a larger renovation, our painting services are designed to meet your specific needs. We treat your home with the utmost care and respect, working efficiently to complete the project on time while minimizing disruption to your daily life.\n\nWith prices starting at $270, our painting service offers exceptional value and quality. Contact Coachella Valley Handyman today to schedule your site inspection and let us bring a new level of beauty to your home!"
   }
+  
 ];

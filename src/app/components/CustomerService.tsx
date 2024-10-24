@@ -2,7 +2,10 @@ import React from 'react';
 import { allServices } from '@/constants/allServices';
 
 interface CustomerServiceProps {
-  formData: any;
+  formData: {
+    selectedService: string;
+    message: string;
+  };
   handleChange: (e: React.ChangeEvent<HTMLSelectElement | HTMLTextAreaElement>) => void;
 }
 
@@ -24,7 +27,7 @@ const CustomerService: React.FC<CustomerServiceProps> = ({ formData, handleChang
         >
           <option value="">Choose a service...</option>
           {allServices.map((service) => (
-            <option key={service.id} value={service.id}>
+            <option key={service.id} value={service.service}>
               {service.service} - {service.price}
             </option>
           ))}

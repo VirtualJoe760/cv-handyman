@@ -1,8 +1,17 @@
-import { STATES } from '@/constants/states';
 import React from 'react';
+import { STATES } from '@/constants/states';
 
 interface CustomerContactProps {
-  formData: any;
+  formData: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phoneNumber: string;
+    address: string;
+    city: string;
+    state: string;
+    zip: string;
+  };
   handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
 }
 
@@ -11,7 +20,9 @@ const CustomerContact: React.FC<CustomerContactProps> = ({ formData, handleChang
     <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
       {/* First Name */}
       <div>
-        <label htmlFor="firstName" className="block text-sm font-semibold leading-6 text-gray-900">First Name</label>
+        <label htmlFor="firstName" className="block text-sm font-semibold leading-6 text-gray-900">
+          First Name
+        </label>
         <div className="mt-2.5">
           <input
             id="firstName"
@@ -28,7 +39,9 @@ const CustomerContact: React.FC<CustomerContactProps> = ({ formData, handleChang
 
       {/* Last Name */}
       <div>
-        <label htmlFor="lastName" className="block text-sm font-semibold leading-6 text-gray-900">Last Name</label>
+        <label htmlFor="lastName" className="block text-sm font-semibold leading-6 text-gray-900">
+          Last Name
+        </label>
         <div className="mt-2.5">
           <input
             id="lastName"
@@ -45,7 +58,9 @@ const CustomerContact: React.FC<CustomerContactProps> = ({ formData, handleChang
 
       {/* Email */}
       <div className="sm:col-span-2">
-        <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">Email</label>
+        <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
+          Email
+        </label>
         <div className="mt-2.5">
           <input
             id="email"
@@ -62,7 +77,9 @@ const CustomerContact: React.FC<CustomerContactProps> = ({ formData, handleChang
 
       {/* Phone Number */}
       <div className="sm:col-span-2">
-        <label htmlFor="phoneNumber" className="block text-sm font-semibold leading-6 text-gray-900">Phone Number</label>
+        <label htmlFor="phoneNumber" className="block text-sm font-semibold leading-6 text-gray-900">
+          Phone Number
+        </label>
         <div className="relative mt-2.5">
           <input
             id="phoneNumber"
@@ -80,7 +97,9 @@ const CustomerContact: React.FC<CustomerContactProps> = ({ formData, handleChang
 
       {/* Address */}
       <div className="sm:col-span-2">
-        <label htmlFor="address" className="block text-sm font-semibold leading-6 text-gray-900">Address</label>
+        <label htmlFor="address" className="block text-sm font-semibold leading-6 text-gray-900">
+          Address
+        </label>
         <div className="mt-2.5">
           <input
             id="address"
@@ -99,7 +118,9 @@ const CustomerContact: React.FC<CustomerContactProps> = ({ formData, handleChang
       <div className="sm:col-span-2 grid grid-cols-1 gap-6 sm:grid-cols-3">
         {/* City */}
         <div>
-          <label htmlFor="city" className="block text-sm font-semibold leading-6 text-gray-900">City</label>
+          <label htmlFor="city" className="block text-sm font-semibold leading-6 text-gray-900">
+            City
+          </label>
           <div className="mt-2.5">
             <input
               id="city"
@@ -116,7 +137,9 @@ const CustomerContact: React.FC<CustomerContactProps> = ({ formData, handleChang
 
         {/* State */}
         <div>
-          <label htmlFor="state" className="block text-sm font-semibold leading-6 text-gray-900">State</label>
+          <label htmlFor="state" className="block text-sm font-semibold leading-6 text-gray-900">
+            State
+          </label>
           <div className="mt-2.5">
             <select
               id="state"
@@ -138,7 +161,9 @@ const CustomerContact: React.FC<CustomerContactProps> = ({ formData, handleChang
 
         {/* ZIP Code */}
         <div>
-          <label htmlFor="zip" className="block text-sm font-semibold leading-6 text-gray-900">ZIP Code</label>
+          <label htmlFor="zip" className="block text-sm font-semibold leading-6 text-gray-900">
+            ZIP Code
+          </label>
           <div className="mt-2.5">
             <input
               id="zip"

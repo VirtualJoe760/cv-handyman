@@ -32,7 +32,7 @@ const ContactFormSubmission: React.FC<ContactFormSubmissionProps> = ({ agreed, s
           By selecting this, you agree to our{' '}
           <button
             type="button"
-            onClick={openModal}
+            onClick={openModal} // This button only opens the modal now
             className="font-semibold text-indigo-600 hover:underline"
             aria-label="Read our privacy policy"
           >

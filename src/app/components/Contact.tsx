@@ -38,6 +38,7 @@ const Contact: React.FC = () => {
       return;
     }
     setFormError('');
+    // Netlify will handle the form submission, so no need for extra API calls here
     console.log('Form submitted', formData);
   };
 
@@ -46,7 +47,17 @@ const Contact: React.FC = () => {
       <div className="mx-auto max-w-4xl text-center">
         <h1 id="contact-heading" className="text-5xl text-black">Contact Us</h1>
       </div>
-      <form onSubmit={handleSubmit} className="mx-auto mt-12 max-w-xl sm:mt-16" aria-describedby="contact-description">
+      <form
+        onSubmit={handleSubmit}
+        className="mx-auto mt-12 max-w-xl sm:mt-16"
+        aria-describedby="contact-description"
+        name="contact" // Name for the Netlify form
+        method="POST" // Method required by Netlify
+        data-netlify="true" // Netlify form attribute
+      >
+        {/* Hidden input required by Netlify */}
+        <input type="hidden" name="form-name" value="contact" />
+
         <CustomerContact formData={formData} handleChange={handleChange} />
         <CustomerService formData={formData} handleChange={handleChange} />
         <ContactFormSubmission 

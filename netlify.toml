@@ -11,10 +11,6 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-  [plugins.inputs]
-    enableMiddleware = true
-    generateFunctions = false  # Important for Netlify Forms to work
-
 [[headers]]
   for = "/*"
   [headers.values]

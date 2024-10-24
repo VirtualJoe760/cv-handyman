@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
       return;
     }
     setFormError('');
-    // Netlify will handle the form submission, so no need for extra API calls here
+    // Netlify handles form submission, so no need for manual API calls here
     console.log('Form submitted', formData);
   };
 
@@ -51,12 +51,14 @@ const Contact: React.FC = () => {
         onSubmit={handleSubmit}
         className="mx-auto mt-12 max-w-xl sm:mt-16"
         aria-describedby="contact-description"
-        action="/#contact"
+        action="/" // Use "/" or specify a path
         name="contact" // Name for the Netlify form
         method="POST" // Method required by Netlify
         data-netlify="true" // Netlify form attribute
+        netlify-honeypot="bot-field" // Anti-spam honeypot field
       >
-        {/* Hidden input required by Netlify */}
+        {/* Honeypot field to prevent bots */}
+        <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />
 
         <CustomerContact formData={formData} handleChange={handleChange} />

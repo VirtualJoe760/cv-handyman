@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = ".next"  # Adjust this to match your build output folder (for example, "out" for Next.js or "public" for static sites)
+  publish = ".next"
 
 [[redirects]]
   from = "/#invite_token=:invite_token"
@@ -10,3 +10,14 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+  [plugins.inputs]
+    enableMiddleware = true
+    generateFunctions = false  # Important for Netlify Forms to work
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

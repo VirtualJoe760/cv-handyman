@@ -51,6 +51,7 @@ const Contact: React.FC = () => {
         onSubmit={handleSubmit}
         className="mx-auto mt-12 max-w-xl sm:mt-16"
         aria-describedby="contact-description"
+        action="/#contact"
         name="contact" // Name for the Netlify form
         method="POST" // Method required by Netlify
         data-netlify="true" // Netlify form attribute

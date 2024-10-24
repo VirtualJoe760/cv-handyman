@@ -3,7 +3,6 @@ import VariableHero from "@/components/VariableHero";
 import { allServices } from "@/constants/allServices";
 import Contact from "@/app/components/Contact";
 import { servicePageContent } from "@/constants/staticContent"; // Import static content
-import Head from "next/head"; // For meta tags
 
 // Define the type for the service object
 export interface Service {
@@ -19,6 +18,35 @@ export interface Service {
 // Define the type for params
 interface Params {
   serviceId: string; // This corresponds to the dynamic part of the URL
+}
+
+// Generate metadata dynamically based on the service
+export async function generateMetadata({ params }: { params: Params }) {
+  const { serviceId } = params;
+  
+  // Find the service by id
+  const service: Service | undefined = allServices.find((s) => s.id === serviceId);
+
+  if (!service) {
+    return {
+      title: "Service Not Found - Coachella Valley Handyman",
+      description: "The service you are looking for does not exist.",
+    };
+  }
+
+  const backgroundImagePath = `https://res.cloudinary.com/dcrue4vr6/image/upload/v1729459742/${serviceId}.jpg`;
+
+  return {
+    title: `${service.service} | Coachella Valley Handyman`,
+    description: service.description,
+    keywords: service.keywords,
+    openGraph: {
+      title: service.service,
+      description: service.description,
+      images: [backgroundImagePath],
+      url: `https://coachellavalleyhandyman.com/our-services/${serviceId}`,
+    },
+  };
 }
 
 const Page: React.FC<{ params: Params }> = ({ params }) => {
@@ -44,20 +72,6 @@ const Page: React.FC<{ params: Params }> = ({ params }) => {
 
   return (
     <>
-      {/* Add SEO and OG tags */}
-      <Head>
-        <title>{`${service.service} | Coachella Valley Handyman`}</title>
-        <meta name="description" content={service.description} />
-        <meta name="keywords" content={service.keywords.join(", ")} />
-        
-        {/* Open Graph Tags */}
-        <meta property="og:title" content={service.service} />
-        <meta property="og:description" content={service.description} />
-        <meta property="og:image" content={backgroundImagePath} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://coachellavalleyhandyman.com/our-services/${serviceId}`} />
-      </Head>
-
       {/* Hero Section */}
       <VariableHero
         backgroundImage={backgroundImagePath}

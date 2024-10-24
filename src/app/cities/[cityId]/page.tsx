@@ -4,7 +4,7 @@ import { coachellaValleyCities } from '@/constants/citiesArray';
 import ServicesList from '@/app/components/ServicesList';
 import Reviews from '@/app/components/Reviews';
 import { cityPageContent } from '@/constants/staticContent'; // Import the static content
-import Head from 'next/head'; // For meta tags
+import { Metadata } from 'next'; // Use Next.js metadata for SEO
 
 // Define the types for city
 export interface City {
@@ -17,11 +17,40 @@ export interface City {
   keywords: {
     main: string[];
     secondary: string[];
-  }
+  };
 }
 
 interface Params {
   cityId: string;
+}
+
+// Dynamic metadata function
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { cityId } = params;
+
+  // Find the corresponding city object
+  const city = coachellaValleyCities.find((c) => c.id === cityId);
+
+  if (!city) {
+    return {
+      title: 'City Not Found - Coachella Valley Handyman',
+      description: 'The city you are looking for does not exist.',
+    };
+  }
+
+  const backgroundImagePath = `https://res.cloudinary.com/dcrue4vr6/image/upload/v1729459742/${city.id}.jpg`;
+
+  return {
+    title: `${city.name} | Coachella Valley Handyman Services`,
+    description: city.description,
+    keywords: [...city.keywords.main, ...city.keywords.secondary],
+    openGraph: {
+      title: city.heading,
+      description: city.description,
+      images: [backgroundImagePath],
+      url: `https://coachellavalleyhandyman.com/cities/${cityId}`,
+    },
+  };
 }
 
 const CityPage: React.FC<{ params: Params }> = ({ params }) => {
@@ -45,20 +74,6 @@ const CityPage: React.FC<{ params: Params }> = ({ params }) => {
 
   return (
     <>
-      {/* SEO and OG tags */}
-      <Head>
-        <title>{`${city.name} | Coachella Valley Handyman Services`}</title>
-        <meta name="description" content={city.description} />
-        <meta name="keywords" content={[...city.keywords.main, ...city.keywords.secondary].join(', ')} />
-
-        {/* Open Graph Tags */}
-        <meta property="og:title" content={city.heading} />
-        <meta property="og:description" content={city.description} />
-        <meta property="og:image" content={backgroundImagePath} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://coachellavalleyhandyman.com/cities/${cityId}`} />
-      </Head>
-
       {/* Hero Section */}
       <VariableHero
         backgroundImage={backgroundImagePath}

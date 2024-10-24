@@ -1,32 +1,59 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
-import Head from 'next/head'; // Use Next.js Head component for meta tags
+import React from 'react';
 import VariableHero from '@/components/VariableHero';
 import { coachellaValleyCities, City } from '@/constants/citiesArray'; // Import the cities array and City type
 import CityCard from '@/components/CityCard'; // Adjusted path to use alias
 import { citiesPageContent } from '@/constants/staticContent'; // Import the static content
-import { SeoData, fetchSeoData } from '@/utils/fetchSeoData'; // Import SEO fetch function and SeoData type
+import { Metadata } from 'next';
+
+interface CityPageProps {
+  params: {
+    cityId: string;
+  };
+}
+
+// Generate metadata for the Cities page
+export const generateMetadata = ({ params }: CityPageProps): Metadata => {
+  const city = coachellaValleyCities.find((c) => c.id === params.cityId);
+
+  if (!city) {
+    return {
+      title: 'Coachella Valley Service Areas',
+      description: 'Explore our wide range of handyman services across various cities in the Coachella Valley. Contact us today to find the right service for your area.',
+      openGraph: {
+        title: 'Handyman Services in the Coachella Valley',
+        description: 'Discover expert handyman services across the Coachella Valley. Contact us today for reliable service in your city.',
+        images: [
+          {
+            url: citiesPageContent.hero.backgroundImage,
+            alt: 'Coachella Valley Handyman',
+          },
+        ],
+        url: 'https://coachellavalleyhandyman.com/cities',
+      },
+    };
+  }
+
+  return {
+    title: `${city.name} - Coachella Valley Handyman Services`,
+    description: city.description,
+    openGraph: {
+      title: city.heading,
+      description: city.description,
+      images: [
+        {
+          url: `https://res.cloudinary.com/dcrue4vr6/image/upload/v1729459742/${city.id}.jpg`,
+          alt: city.name,
+        },
+      ],
+      url: `https://coachellavalleyhandyman.com/cities/${city.id}`,
+    },
+  };
+};
 
 const Cities: React.FC = () => {
-  const [seoData, setSeoData] = useState<SeoData | null>(null);
-
-  // Find the corresponding city object for Coachella Valley
-  const city: City | undefined = coachellaValleyCities.find(
+  const city = coachellaValleyCities.find(
     (c) => c.id === citiesPageContent.hero.cityId
   );
-
-  // Fetch SEO data dynamically
-  useEffect(() => {
-    const fetchSeo = async () => {
-      if (city) {
-        const seo = await fetchSeoData('city', city.id, citiesPageContent.hero.backgroundImage);
-        setSeoData(seo);
-      }
-    };
-
-    fetchSeo();
-  }, [city]);
 
   if (!city) {
     return (
@@ -38,30 +65,6 @@ const Cities: React.FC = () => {
 
   return (
     <>
-      {/* Use Next.js Head component for meta tags */}
-      <Head>
-        <title>{seoData?.title || 'Coachella Valley Service Areas'}</title>
-        <meta
-          name="description"
-          content={
-            seoData?.description ||
-            'Explore our wide range of handyman services across various cities in the Coachella Valley. Contact us today to find the right service for your area.'
-          }
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content={seoData?.ogTitle || 'Handyman Services in the Coachella Valley'} />
-        <meta
-          property="og:description"
-          content={
-            seoData?.ogDescription || 'Discover expert handyman services across the Coachella Valley. Contact us today for reliable service in your city.'
-          }
-        />
-        <meta property="og:image" content={seoData?.ogImage || citiesPageContent.hero.backgroundImage} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={seoData?.ogUrl || 'https://coachellavalleyhandyman.com/cities'} />
-        <meta name="robots" content="index, follow" />
-      </Head>
-
       {/* Hero Section */}
       <VariableHero
         backgroundImage={citiesPageContent.hero.backgroundImage}

@@ -139,6 +139,11 @@ export const tipsCategoriesContent = {
       imageUrl:
         "https://images.unsplash.com/photo-1595814432314-90095f342694?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       altText: "A person painting a home - How to Articles",
+      seo: {
+        title: "How to Articles - Handyman Tips | Coachella Valley",
+        description: "Find detailed how-to guides for various home improvement tasks and DIY projects in the Coachella Valley. Get expert tips from local handymen.",
+        keywords: ["how-to", "home improvement", "DIY", "handyman tips", "Coachella Valley"],
+      },
       author: {
         name: "Coachella Valley Handyman",
       },
@@ -150,6 +155,11 @@ export const tipsCategoriesContent = {
       imageUrl:
         "https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       altText: "Home renovation project in progress - Home Improvement",
+      seo: {
+        title: "Home Improvement Articles | Coachella Valley Handyman",
+        description: "Explore home improvement ideas and professional tips for upgrading your home in Coachella Valley.",
+        keywords: ["home improvement", "remodeling", "home renovation", "Coachella Valley", "handyman services"],
+      },
       author: {
         name: "Coachella Valley Handyman",
       },
@@ -161,6 +171,11 @@ export const tipsCategoriesContent = {
       imageUrl:
         "https://images.unsplash.com/photo-1561065091-4908548ee638?q=80&w=2448&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       altText: "Keep cool in the desert with seasonal maintenance - Seasonal Home Care",
+      seo: {
+        title: "Seasonal Home Care Tips for Coachella Valley",
+        description: "Get seasonal home care advice and maintenance tips to prepare your home for every season in Coachella Valley.",
+        keywords: ["seasonal home care", "home maintenance", "Coachella Valley", "desert home care", "handyman tips"],
+      },
       author: {
         name: "Coachella Valley Handyman",
       },

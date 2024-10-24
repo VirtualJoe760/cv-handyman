@@ -5,11 +5,31 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import QuickContact from "@/app/components/QuickContact";
 import dynamic from 'next/dynamic';
+import { Metadata } from 'next';
 
 // Dynamically import Disqus for client-side rendering
 const DisqusComments = dynamic(() => import('@/app/components/DisqusComments'), {
   ssr: false,  // Disable server-side rendering for this component
 });
+
+// Define dynamic metadata for SEO based on frontmatter
+export async function generateMetadata({ params }: { params: { slugId: string } }): Promise<Metadata> {
+  const post: Post = await getPostBySlug(params.slugId);
+
+  return {
+    title: post.title,
+    description: post.metaDescription || post.description,
+    keywords: post.keywords?.join(', '),
+    openGraph: {
+      title: post.title,
+      description: post.metaDescription || post.description,
+      url: `https://coachellavalleyhandyman.com/posts/${post.slugId}`,
+      images: [{ url: post.ogImage || post.image, alt: post.altText || post.title }],
+      type: 'article',
+      publishedTime: post.date,
+    },
+  };
+}
 
 export default async function PostPage({
   params,

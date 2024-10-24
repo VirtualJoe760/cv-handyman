@@ -7,3 +7,6 @@
   to = "/admin/#invite_token=:invite_token"
   status = 200
   force = true
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

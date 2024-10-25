@@ -32,14 +32,19 @@ const Contact: React.FC = () => {
   const closeModal = () => setIsOpen(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent the default behavior initially
+
+    // Check if the privacy policy is agreed upon
     if (!agreed) {
       setFormError('You must agree to the privacy policy to submit this form.');
       return;
     }
+
+    // Clear form error
     setFormError('');
-    // Netlify handles form submission, so no need for manual API calls here
-    console.log('Form submitted', formData);
+
+    // Let the form submit normally by not preventing default behavior
+    e.currentTarget.submit(); // Submits the form programmatically, allowing Netlify to handle it
   };
 
   return (
@@ -51,7 +56,7 @@ const Contact: React.FC = () => {
         onSubmit={handleSubmit}
         className="mx-auto mt-12 max-w-xl sm:mt-16"
         aria-describedby="contact-description"
-        action="/" // Use "/" or specify a path
+        action="/#contact" // Use "/" or specify a path
         name="contact" // Name for the Netlify form
         method="POST" // Method required by Netlify
         data-netlify="true" // Netlify form attribute

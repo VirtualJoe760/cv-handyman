@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CustomerContact from './CustomerContact';
 import CustomerService from './CustomerService';
 import ContactFormSubmission from './ContactFormSubmission';
@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
   const [agreed, setAgreed] = useState<boolean>(false);
   const [formError, setFormError] = useState<string>('');
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [showConfirmation, setShowConfirmation] = useState<boolean>(false); // Show confirmation after success
+  const [showConfirmation, setShowConfirmation] = useState<boolean>(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -24,6 +24,14 @@ const Contact: React.FC = () => {
     selectedService: '',
     message: ''
   });
+
+  useEffect(() => {
+    // Check if the confirmation has been previously shown
+    const confirmationShown = localStorage.getItem('formSubmitted');
+    if (confirmationShown) {
+      setShowConfirmation(true);
+    }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -58,6 +66,7 @@ const Contact: React.FC = () => {
 
       if (response.ok) {
         setShowConfirmation(true); // Show confirmation component
+        localStorage.setItem('formSubmitted', 'true'); // Save confirmation in localStorage
         form.reset();  // Clear form after submission
       } else {
         setFormError("Submission failed. Please try again.");
@@ -68,7 +77,8 @@ const Contact: React.FC = () => {
   };
 
   const handleTimeout = () => {
-    setShowConfirmation(false); // Hide confirmation after 24 hours
+    setShowConfirmation(false);
+    localStorage.removeItem('formSubmitted'); // Remove flag to reset on timeout
   };
 
   return (
@@ -84,7 +94,7 @@ const Contact: React.FC = () => {
           onSubmit={handleSubmit}
           className="mx-auto mt-12 max-w-xl sm:mt-16"
           aria-describedby="contact-description"
-          name="contact" // Name for the Netlify form
+          name="contact-form" // Name for the Netlify form
           method="POST" // Method required by Netlify
           data-netlify="true" // Netlify form attribute
           netlify-honeypot="bot-field" // Anti-spam honeypot field

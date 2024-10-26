@@ -30,11 +30,10 @@ const ContactConfirmation: React.FC<ContactConfirmationProps> = ({ onTimeout }) 
       {/* Right Column - Image */}
       <div className="flex-1 mt-8 sm:mt-0 sm:ml-8">
         <Image
-          src="/path-to-your-image.jpg"
+          src="https://res.cloudinary.com/dcrue4vr6/image/upload/v1729904343/AdobeStock_822254361.png"
           alt="Thank you image"
-          width={630}
-          height={630}
-          className="rounded-lg shadow-md"
+          width={315}
+          height={315}
         />
       </div>
     </div>

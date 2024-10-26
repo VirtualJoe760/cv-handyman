@@ -25,14 +25,15 @@ const Contact: React.FC = () => {
     message: ''
   });
 
+  // Check local storage for form submission status to persist confirmation
   useEffect(() => {
-    // Check if the confirmation has been previously shown
     const confirmationShown = localStorage.getItem('formSubmitted');
     if (confirmationShown) {
       setShowConfirmation(true);
     }
   }, []);
 
+  // Handle form input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -44,7 +45,7 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent default form submission
 
-    // Check if the privacy policy is agreed upon
+    // Validate privacy policy agreement
     if (!agreed) {
       setFormError('You must agree to the privacy policy to submit this form.');
       return;
@@ -53,21 +54,18 @@ const Contact: React.FC = () => {
     // Clear form error
     setFormError('');
 
-    // Prepare form data for Netlify
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
     try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
+      // Send form data to the Netlify serverless function for SendGrid
+      const response = await fetch('/.netlify/functions/sendgrid', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        setShowConfirmation(true); // Show confirmation component
-        localStorage.setItem('formSubmitted', 'true'); // Save confirmation in localStorage
-        form.reset();  // Clear form after submission
+        setShowConfirmation(true); // Show confirmation component on success
+        localStorage.setItem('formSubmitted', 'true'); // Save confirmation status to localStorage
+        e.currentTarget.reset(); // Clear form after submission
       } else {
         setFormError("Submission failed. Please try again.");
       }
@@ -78,7 +76,7 @@ const Contact: React.FC = () => {
 
   const handleTimeout = () => {
     setShowConfirmation(false);
-    localStorage.removeItem('formSubmitted'); // Remove flag to reset on timeout
+    localStorage.removeItem('formSubmitted'); // Remove flag from localStorage after timeout
   };
 
   return (
@@ -94,15 +92,9 @@ const Contact: React.FC = () => {
           onSubmit={handleSubmit}
           className="mx-auto mt-12 max-w-xl sm:mt-16"
           aria-describedby="contact-description"
-          name="contact-form" // Name for the Netlify form
-          method="POST" // Method required by Netlify
-          data-netlify="true" // Netlify form attribute
-          netlify-honeypot="bot-field" // Anti-spam honeypot field
+          name="contact-form"
+          method="POST"
         >
-          {/* Honeypot field to prevent bots */}
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="contact" />
-
           <CustomerContact formData={formData} handleChange={handleChange} />
           <CustomerService formData={formData} handleChange={handleChange} />
           <ContactFormSubmission 

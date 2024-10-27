@@ -85,9 +85,9 @@ const Contact: React.FC = () => {
         <h1 id="contact-heading" className="text-5xl text-black">Contact Us</h1>
       </div>
 
-      {showConfirmation ? (
+      {/* {showConfirmation ? (
         <ContactConfirmation onTimeout={handleTimeout} /> // Render confirmation on success
-      ) : (
+      ) : ( */}
         <form
           onSubmit={handleSubmit}
           className="mx-auto mt-12 max-w-xl sm:mt-16"
@@ -124,7 +124,7 @@ const Contact: React.FC = () => {
             </button>
           </div>
         </form>
-      )}
+      {/* )} */}
     </section>
   );
 };

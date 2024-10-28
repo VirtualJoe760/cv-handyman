@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useState, useEffect } from 'react';
 import CustomerContact from './CustomerContact';
 import CustomerService from './CustomerService';
@@ -14,7 +12,6 @@ const Contact: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [showConfirmation, setShowConfirmation] = useState<boolean>(false);
   const [showBooking, setShowBooking] = useState<boolean>(false);
-  const [name, setName] = useState<string>(''); // Add name state to hold the user's name
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -28,7 +25,6 @@ const Contact: React.FC = () => {
     message: ''
   });
 
-  // Check local storage for form submission status to persist confirmation
   useEffect(() => {
     const confirmationShown = localStorage.getItem('formSubmitted');
     if (confirmationShown) {
@@ -36,7 +32,6 @@ const Contact: React.FC = () => {
     }
   }, []);
 
-  // Handle form input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -56,7 +51,7 @@ const Contact: React.FC = () => {
     setFormError('');
 
     try {
-      console.log("Form Data:", formData); // Log form data before submission
+      console.log("Form Data:", formData);
 
       // Check for existing contact in Google Contacts
       const googleContactResponse = await fetch('/.netlify/functions/checkForContact', {
@@ -66,12 +61,11 @@ const Contact: React.FC = () => {
       });
 
       const googleContactResult = await googleContactResponse.json();
-      console.log("Google Contact Result:", googleContactResult); // Log Google Contact API response
+      console.log("Google Contact Result:", googleContactResult);
 
       if (googleContactResponse.ok && googleContactResult.exists) {
         // If contact exists, load booking component
         setShowBooking(true);
-        setName(formData.firstName); // Set name for personalized message
       } else {
         // If contact does not exist, proceed with adding contact and sending email
         const addContactResponse = await fetch('/.netlify/functions/addGoogleContact', {
@@ -107,7 +101,7 @@ const Contact: React.FC = () => {
 
   const handleTimeout = () => {
     setShowConfirmation(false);
-    localStorage.removeItem('formSubmitted'); // Remove flag from localStorage after timeout
+    localStorage.removeItem('formSubmitted');
   };
 
   return (
@@ -117,7 +111,7 @@ const Contact: React.FC = () => {
       </div>
 
       {showBooking ? (
-        <AppointmentBooking name={name} /> // Load booking component if contact exists
+        <AppointmentBooking name={formData.firstName} /> // Load booking component if contact exists
       ) : showConfirmation ? (
         <ContactConfirmation onTimeout={handleTimeout} /> // Show confirmation if form submitted successfully
       ) : (
@@ -137,7 +131,6 @@ const Contact: React.FC = () => {
             formError={formError}
           />
 
-          {/* Modal for Privacy Policy */}
           {isOpen && (
             <PrivacyPolicyModal 
               isOpen={isOpen} 

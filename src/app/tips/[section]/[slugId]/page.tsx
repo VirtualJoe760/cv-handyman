@@ -20,7 +20,6 @@ export async function generateMetadata({
   try {
     const { slugId } = params;
 
-    // Safeguard to ensure slugId exists in params
     if (!slugId) {
       console.error('Slug ID is missing in params:', params);
       return {
@@ -31,7 +30,6 @@ export async function generateMetadata({
 
     const post: Post = await getPostBySlug(slugId);
 
-    // Ensure post exists
     if (!post) {
       return {
         title: 'Post Not Found',
@@ -71,7 +69,6 @@ export default async function PostPage({
 }) {
   const { slugId, section } = params;
 
-  // Safeguard to ensure slugId is passed
   if (!slugId) {
     console.error('Slug ID is missing.');
     return <p>Slug ID is missing</p>;
@@ -80,10 +77,6 @@ export default async function PostPage({
   try {
     const post: Post = await getPostBySlug(slugId);
 
-    // Log for debugging
-    console.log("Post found:", post);
-
-    // Handle case where post is not found
     if (!post) {
       return (
         <div>
@@ -95,32 +88,26 @@ export default async function PostPage({
       );
     }
 
-    // Convert markdown content to HTML
     const processedContent = await remark().use(html).process(post.content);
     const contentHtml = processedContent.toString();
 
     return (
       <div>
-        {/* VariableHero component */}
         <VariableHero
           backgroundImage={post.image}
           serviceName={post.title}
           description={`Published on: ${new Date(post.date).toLocaleDateString()}`}
         />
 
-        {/* Main content section */}
         <section className="mx-5 2xl:px-80 lg:px-40 my-10 py-10 px-2">
-          {/* Render post content */}
           <div
             className="post-content"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
         </section>
 
-        {/* QuickContact component */}
         <QuickContact section={section} />
 
-        {/* Disqus Comments Section */}
         <div className="mx-5 2xl:px-80 lg:px-40 my-10 py-10 px-2">
           <DisqusComments 
             postSlug={slugId} 

@@ -1,6 +1,6 @@
-import React from 'react'
-import TipsCategories from '@/components/TipsCategories'
-import VariableHero from '@/components/VariableHero'
+import React from 'react';
+import TipsCategories from '@/components/TipsCategories';
+import VariableHero from '@/components/VariableHero';
 
 // Generate dynamic metadata for the Tips section
 export async function generateMetadata() {
@@ -44,7 +44,7 @@ const TipsPage = () => {
       {/* Tips Categories Section */}
       <TipsCategories />
     </>
-  )
+  );
 }
 
-export default TipsPage
+export default TipsPage;

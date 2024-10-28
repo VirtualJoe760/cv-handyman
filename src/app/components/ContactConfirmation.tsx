@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ContactConfirmationProps {
   onTimeout: () => void; // Callback to remove component after timeout
@@ -22,9 +23,15 @@ const ContactConfirmation: React.FC<ContactConfirmationProps> = ({ onTimeout }) 
       {/* Left Column - Message */}
       <div className="flex-1 text-center sm:text-left">
         <h2 className="text-4xl font-semibold text-gray-800">Thank you!</h2>
-        <p className="mt-4 text-xl text-gray-700">
-          We will be in contact soon. Check your email for further communication.
+        <p className="mt-4 text-xl text-black mb-5">
+          We have recieved your information and look forward to helping you soon. Please feel free to message us via direct messaging on our website, or if you need to book another appointment  click below.
         </p>
+        <Link
+        href={"https://tidycal.com/cv-handyman/handyman-appointment"}
+        className="mt-10 my-10 text-blue-500 hover:text-red-500 text-xl "
+        >
+        Book Appointment
+        </Link>
       </div>
       
       {/* Right Column - Image */}

@@ -16,7 +16,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",  // Keep this to root
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
@@ -31,11 +31,10 @@
         "./src/utils/*"
       ],
       "@/types/*": [
-        "./src/types/*",
+        "./src/types/*"
       ],
-      // Add the root alias below
-      "@root/*": [
-        "./../typescript*"
+      "@functions/*": [
+        "./netlify/functions/*"
       ]
     },
     "incremental": true,

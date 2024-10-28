@@ -6,12 +6,15 @@ import CustomerService from './CustomerService';
 import ContactFormSubmission from './ContactFormSubmission';
 import PrivacyPolicyModal from './PrivacyPolicyModal';
 import ContactConfirmation from './ContactConfirmation';
+import AppointmentBooking from './AppointmentBooking';
 
 const Contact: React.FC = () => {
   const [agreed, setAgreed] = useState<boolean>(false);
   const [formError, setFormError] = useState<string>('');
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [showConfirmation, setShowConfirmation] = useState<boolean>(false);
+  const [showBooking, setShowBooking] = useState<boolean>(false);
+  const [name, setName] = useState<string>(''); // Add name state to hold the user's name
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -43,34 +46,62 @@ const Contact: React.FC = () => {
   const closeModal = () => setIsOpen(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
 
-    // Validate privacy policy agreement
     if (!agreed) {
       setFormError('You must agree to the privacy policy to submit this form.');
       return;
     }
 
-    // Clear form error
     setFormError('');
 
     try {
-      // Send form data to the Netlify serverless function for SendGrid
-      const response = await fetch('/.netlify/functions/sendgrid', {
+      console.log("Form Data:", formData); // Log form data before submission
+
+      // Check for existing contact in Google Contacts
+      const googleContactResponse = await fetch('/.netlify/functions/checkForContact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ email: formData.email }),
       });
 
-      if (response.ok) {
-        setShowConfirmation(true); // Show confirmation component on success
-        localStorage.setItem('formSubmitted', 'true'); // Save confirmation status to localStorage
-        e.currentTarget.reset(); // Clear form after submission
+      const googleContactResult = await googleContactResponse.json();
+      console.log("Google Contact Result:", googleContactResult); // Log Google Contact API response
+
+      if (googleContactResponse.ok && googleContactResult.exists) {
+        // If contact exists, load booking component
+        setShowBooking(true);
+        setName(formData.firstName); // Set name for personalized message
       } else {
-        setFormError("Submission failed. Please try again.");
+        // If contact does not exist, proceed with adding contact and sending email
+        const addContactResponse = await fetch('/.netlify/functions/addGoogleContact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+
+        if (addContactResponse.ok) {
+          // Proceed with sending email
+          const emailResponse = await fetch('/.netlify/functions/sendEmail', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+          });
+
+          if (emailResponse.ok) {
+            setShowConfirmation(true);
+            localStorage.setItem('formSubmitted', 'true');
+            e.currentTarget.reset();
+          } else {
+            setFormError('Failed to send email. Please try again.');
+          }
+        } else {
+          setFormError('Failed to add contact. Please try again.');
+        }
       }
     } catch (error) {
-      setFormError("An error occurred. Please try again.");
+      console.error("Error occurred:", error);
+      setFormError('An error occurred. Please try again.');
     }
   };
 
@@ -85,9 +116,11 @@ const Contact: React.FC = () => {
         <h1 id="contact-heading" className="text-5xl text-black">Contact Us</h1>
       </div>
 
-      {/* {showConfirmation ? (
-        <ContactConfirmation onTimeout={handleTimeout} /> // Render confirmation on success
-      ) : ( */}
+      {showBooking ? (
+        <AppointmentBooking name={name} /> // Load booking component if contact exists
+      ) : showConfirmation ? (
+        <ContactConfirmation onTimeout={handleTimeout} /> // Show confirmation if form submitted successfully
+      ) : (
         <form
           onSubmit={handleSubmit}
           className="mx-auto mt-12 max-w-xl sm:mt-16"
@@ -103,7 +136,7 @@ const Contact: React.FC = () => {
             openModal={openModal}
             formError={formError}
           />
-          
+
           {/* Modal for Privacy Policy */}
           {isOpen && (
             <PrivacyPolicyModal 
@@ -113,7 +146,7 @@ const Contact: React.FC = () => {
               aria-describedby="privacy-policy-description"
             />
           )}
-          
+
           <div className="mt-10">
             <button
               type="submit"
@@ -124,7 +157,7 @@ const Contact: React.FC = () => {
             </button>
           </div>
         </form>
-      {/* )} */}
+      )}
     </section>
   );
 };

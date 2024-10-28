@@ -1,5 +1,6 @@
-import { Handler } from '@netlify/functions';
-import nodemailer from 'nodemailer';
+import { Handler } from "@netlify/functions";
+import nodemailer from "nodemailer";
+import "dotenv/config";
 
 interface FormData {
   firstName: string;
@@ -15,11 +16,11 @@ interface FormData {
 }
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: "gmail",
   auth: {
-    user: 'developer.hugheshs@gmail.com', // Your Gmail address
-    pass: 'YOUR_APP_PASSWORD'             // Your Gmail App Password
-  }
+    user: "developer.hugheshs@gmail.com",
+    pass: process.env.EMAIL_PASSWORD,
+  },
 });
 
 const sendEmail: Handler = async (event) => {
@@ -27,7 +28,7 @@ const sendEmail: Handler = async (event) => {
     if (!event.body) {
       return {
         statusCode: 400,
-        body: JSON.stringify({ message: 'No form data provided.' }),
+        body: JSON.stringify({ message: "No form data provided." }),
       };
     }
 
@@ -36,7 +37,7 @@ const sendEmail: Handler = async (event) => {
     // Email to Admin
     const adminEmailOptions = {
       from: '"Coachella Valley Handyman" <developer.hugheshs@gmail.com>',
-      to: 'contact@coachellavalleyhandyman.com', // Your business email
+      to: "contact@coachellavalleyhandyman.com", // Your business email
       subject: `New Contact Form Submission from ${formData.firstName} ${formData.lastName}`,
       text: `
         You have received a new contact form submission:
@@ -52,26 +53,28 @@ const sendEmail: Handler = async (event) => {
         - Message: ${formData.message}
       `,
       html: `
-        <h3>New Contact Form Submission</h3>
-        <ul>
-          <li><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</li>
-          <li><strong>Email:</strong> ${formData.email}</li>
-          <li><strong>Phone:</strong> ${formData.phoneNumber}</li>
-          <li><strong>Address:</strong> ${formData.address}</li>
-          <li><strong>City:</strong> ${formData.city}</li>
-          <li><strong>State:</strong> ${formData.state}</li>
-          <li><strong>ZIP Code:</strong> ${formData.zip}</li>
-          <li><strong>Selected Service:</strong> ${formData.selectedService}</li>
-          <li><strong>Message:</strong> ${formData.message}</li>
+        <div style="font-family: Arial, sans-serif; line-height: 1.5;">
+        <h1 style="color: #333;">New Service Request from ${formData.firstName} ${formData.lastName} | ${formData.selectedService}</h1>
+        <ul style="list-style-type: none; padding: 0;">
+            <li><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</li>
+            <li><strong>Email:</strong> ${formData.email}</li>
+            <li><strong>Phone:</strong> ${formData.phoneNumber}</li>
+            <li><strong>Address:</strong> ${formData.address}</li>
+            <li><strong>City:</strong> ${formData.city}</li>
+            <li><strong>State:</strong> ${formData.state}</li>
+            <li><strong>ZIP Code:</strong> ${formData.zip}</li>
+            <li><strong>Selected Service:</strong> ${formData.selectedService}</li>
+            <li><strong>Message:</strong> ${formData.message}</li>
         </ul>
-      `
+        </div>
+    `,
     };
 
     // Email to Customer
     const customerEmailOptions = {
       from: '"Coachella Valley Handyman" <developer.hugheshs@gmail.com>',
       to: formData.email, // Customer's email
-      subject: 'Thank you for contacting Coachella Valley Handyman',
+      subject: "Thank you for contacting Coachella Valley Handyman",
       text: `Hello ${formData.firstName},
 
       Thank you for reaching out to Coachella Valley Handyman! We have received your inquiry regarding ${formData.selectedService}. Our team will review your request and be in touch with you as soon as possible.
@@ -82,7 +85,7 @@ const sendEmail: Handler = async (event) => {
         <p>Hello ${formData.firstName},</p>
         <p>Thank you for reaching out to Coachella Valley Handyman! We have received your inquiry regarding <strong>${formData.selectedService}</strong>. Our team will review your request and be in touch with you as soon as possible.</p>
         <p>Best regards,<br/>Coachella Valley Handyman Team</p>
-      `
+      `,
     };
 
     // Send both emails
@@ -91,13 +94,13 @@ const sendEmail: Handler = async (event) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'Emails sent successfully!' })
+      body: JSON.stringify({ message: "Emails sent successfully!" }),
     };
   } catch (error) {
-    console.error('Error sending emails:', error);
+    console.error("Error sending emails:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: 'Failed to send emails.' })
+      body: JSON.stringify({ message: "Failed to send emails." }),
     };
   }
 };

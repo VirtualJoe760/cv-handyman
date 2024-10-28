@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import CustomerContact from './CustomerContact';
 import CustomerService from './CustomerService';
